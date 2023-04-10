@@ -3,6 +3,7 @@ import { FormEvent, useState } from "react";
 import { ContentDiv } from "./createUser-styles";
 import { useNavigate } from "react-router-dom";
 import { UserInput } from "../../utils/types/requests";
+import Menu2 from "../../components/menus/menu2";
 
 export function CreateUser() {
   const navigate = useNavigate();
@@ -20,46 +21,49 @@ export function CreateUser() {
   }
 
   return (
-    <ContentDiv>
-      <h2>{"Cadastro de Usuario"}</h2>
-      <form onSubmit={handleSubmit}>
-        <label>Nome do Usuario</label>
-        <input
-          placeholder="Seu Nome"
-          type="text"
-          name="userName"
-          required
-        ></input>
-        <label>Email do usuario</label>
-        <input
-          placeholder="Seu Email"
-          type="text"
-          name="userEmail"
-          required
-        ></input>
-        <label>Password</label>
-        <input
-          placeholder="Sua senha"
-          type="password"
-          name="userPassword"
-          required
-        ></input>
-        <label>CPF</label>
-        <input
-          placeholder="Seu CPF"
-          type="text"
-          name="userCPF"
-          required
-        ></input>
-        <button type="submit">{"Cadastrar"}</button>
-        <button
-          onClick={() => {
-            navigate("/");
-          }}
-        >
-          Sair
-        </button>
-      </form>
-    </ContentDiv>
+    <div>
+      <Menu2 />
+      <ContentDiv>
+        <h2>{"Cadastro de Usuario"}</h2>
+        <form onSubmit={handleSubmit}>
+          <label>Nome do Usuario</label>
+          <input
+            placeholder="Seu Nome"
+            type="text"
+            name="userName"
+            required
+          ></input>
+          <label>Email do usuario</label>
+          <input
+            placeholder="Seu Email"
+            type="text"
+            name="userEmail"
+            required
+          ></input>
+          <label>Password</label>
+          <input
+            placeholder="Sua senha"
+            type="password"
+            name="userPassword"
+            required
+          ></input>
+          <label>CPF</label>
+          <input
+            placeholder="Seu CPF"
+            type="text"
+            name="userCPF"
+            required
+          ></input>
+          <button type="submit">{"Cadastrar"}</button>
+          <button
+            onClick={() => {
+              navigate("/");
+            }}
+          >
+            Sair
+          </button>
+        </form>
+      </ContentDiv>
+    </div>
   );
 }
