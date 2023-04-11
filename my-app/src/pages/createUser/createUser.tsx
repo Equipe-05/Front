@@ -11,10 +11,13 @@ export function CreateUser() {
     e.preventDefault();
 
     const newUser: UserInput = {
-      Name: e.currentTarget.userName.value,
-      Email: e.currentTarget.userEmail.value,
-      Password: e.currentTarget.userPassword.value,
-      CPF: e.currentTarget.userCPF.value,
+      name: e.currentTarget.userName.value,
+      email: e.currentTarget.userEmail.value,
+      password: e.currentTarget.userPassword.value,
+      confirmPassword: e.currentTarget.userConfirmPassword.value,
+      cpf: e.currentTarget.userCPF.value,
+      address: e.currentTarget.userAddress.value,
+      phone: e.currentTarget.userPhone.value,
     };
     console.log(newUser);
   }
@@ -38,11 +41,18 @@ export function CreateUser() {
             name="userEmail"
             required
           ></input>
-          <label>Password</label>
+          <label>Senha</label>
           <input
             placeholder="Sua senha"
             type="password"
             name="userPassword"
+            required
+          ></input>
+          <label>Confirme Senha</label>
+          <input
+            placeholder="Sua Repita Senha"
+            type="password"
+            name="userConfirmPassword"
             required
           ></input>
           <label>CPF</label>
@@ -50,6 +60,20 @@ export function CreateUser() {
             placeholder="Seu CPF"
             type="text"
             name="userCPF"
+            required
+          ></input>
+          <label>Endereço</label>
+          <input
+            placeholder="Seu Endereço"
+            type="text"
+            name="userAddress"
+            required
+          ></input>
+          <label>Telefone</label>
+          <input
+            placeholder="Seu Telefone"
+            type="text"
+            name="userPhone"
             required
           ></input>
           <button type="submit">{"Cadastrar"}</button>

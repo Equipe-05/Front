@@ -1,6 +1,9 @@
 export type UserInput = {
-  Name: String;
-  Email: String;
-  Password: String;
-  CPF: String;
+  name: String;
+  email: String;
+  password: String;
+  confirmPassword: String;
+  cpf: String;
+  address: String;
+  phone: String;
 };

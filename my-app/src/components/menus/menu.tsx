@@ -7,14 +7,16 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
+  useMediaQuery,
   useTheme,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { Box } from "@mui/system";
 
-export default function Menu2() {
+export default function Menu() {
   const navigate = useNavigate();
   const theme = useTheme();
+  const smDown = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <>
