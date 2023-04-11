@@ -3,7 +3,6 @@ import { FormEvent, useState } from "react";
 import { ContentDiv } from "./createUser-styles";
 import { useNavigate } from "react-router-dom";
 import { UserInput } from "../../utils/types/requests";
-import Menu from "../../components/menus/menu";
 
 export function CreateUser() {
   const navigate = useNavigate();
@@ -22,7 +21,6 @@ export function CreateUser() {
 
   return (
     <div>
-      <Menu />
       <ContentDiv>
         <h2>{"Cadastro de Usuario"}</h2>
         <form onSubmit={handleSubmit}>
