@@ -4,3 +4,8 @@ export type UserInput = {
   Password: String;
   CPF: String;
 };
+
+export type LoginRequest = {
+  email: string;
+  password: string;
+}
