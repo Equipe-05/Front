@@ -56,7 +56,7 @@ export default function Menu2() {
               </ListItemButton>
               <ListItemButton
                 onClick={() => {
-                  navigate("/");
+                  navigate("/create-user");
                 }}
               >
                 <ListItemIcon>
