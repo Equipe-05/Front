@@ -5,6 +5,7 @@ import "./index.css";
 import { PageLogin } from "./pages/login/login";
 import { PageCreateUser } from "./pages/createUser/createUser";
 import { Manager } from "./pages/manager/manager";
+import { Franchisee } from "./pages/franchisee/franchisee";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -16,6 +17,7 @@ root.render(
         <Route path="/" element={<PageLogin />} />
         <Route path="/create-user" element={<PageCreateUser />} />
         <Route path="/manager" element={<Manager />} />
+        <Route path="/FRANCHISEE/:id" element={<Franchisee />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
