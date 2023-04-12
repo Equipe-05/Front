@@ -2,15 +2,17 @@ import React from "react";
 import { FormEvent, useState } from "react";
 import { ContentDiv } from "./createUser-styles";
 import { useNavigate } from "react-router-dom";
-import { UserInput } from "../../utils/types/requests";
+import { CreateUser } from "../../utils/types/requests";
+import { api } from "../../utils/api/api";
 
-export function CreateUser() {
+export function PageCreateUser() {
   const navigate = useNavigate();
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const isAdmin = "FRANCHISEE";
 
-    const newUser: UserInput = {
+    const newUser: CreateUser = {
       name: e.currentTarget.userName.value,
       email: e.currentTarget.userEmail.value,
       password: e.currentTarget.userPassword.value,
@@ -19,7 +21,11 @@ export function CreateUser() {
       address: e.currentTarget.userAddress.value,
       phone: e.currentTarget.userPhone.value,
     };
-    console.log(newUser);
+
+    let userResponse;
+    const newUser2 = { ...newUser, role: isAdmin };
+    userResponse = await api.postUser(newUser2);
+    console.log(userResponse);
   }
 
   return (
@@ -29,49 +35,49 @@ export function CreateUser() {
         <form onSubmit={handleSubmit}>
           <label>Nome do Usuario</label>
           <input
-            placeholder="Seu Nome"
+            placeholder="Ex: nome"
             type="text"
             name="userName"
             required
           ></input>
           <label>Email do usuario</label>
           <input
-            placeholder="Seu Email"
+            placeholder="Ex: nome@gmail.com"
             type="text"
             name="userEmail"
             required
           ></input>
           <label>Senha</label>
           <input
-            placeholder="Sua senha"
+            placeholder="Ex: senha123"
             type="password"
             name="userPassword"
             required
           ></input>
           <label>Confirme Senha</label>
           <input
-            placeholder="Sua Repita Senha"
+            placeholder="Ex: senha123"
             type="password"
             name="userConfirmPassword"
             required
           ></input>
           <label>CPF</label>
           <input
-            placeholder="Seu CPF"
+            placeholder="Ex: 12345678910"
             type="text"
             name="userCPF"
             required
           ></input>
           <label>Endereço</label>
           <input
-            placeholder="Seu Endereço"
+            placeholder="Ex: Rua Endereço"
             type="text"
             name="userAddress"
             required
           ></input>
           <label>Telefone</label>
           <input
-            placeholder="Seu Telefone"
+            placeholder="Ex: 11991234567"
             type="text"
             name="userPhone"
             required
