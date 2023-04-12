@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./index.css";
 import { PageLogin } from "./pages/login/login";
-import { CreateUser } from "./pages/createUser/createUser";
+import { PageCreateUser } from "./pages/createUser/createUser";
 import { Manager } from "./pages/manager/manager";
 
 const root = ReactDOM.createRoot(
@@ -14,7 +14,7 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<PageLogin />} />
-        <Route path="/create-user" element={<CreateUser />} />
+        <Route path="/create-user" element={<PageCreateUser />} />
         <Route path="/manager" element={<Manager />} />
       </Routes>
     </BrowserRouter>
