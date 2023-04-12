@@ -1,17 +1,14 @@
 export type UserInput = {
-  name: String;
-  email: String;
-  password: String;
-  confirmPassword: String;
-  cpf: String;
-  address: String;
-  phone: String;
+  Name: String;
+  Email: String;
+  Password: String;
+  CPF: String;
 };
 
 export type LoginRequest = {
   email: string;
   password: string;
-}
+};
 
 export type UpdateUser = {
   id: string;
@@ -23,15 +20,15 @@ export type UpdateUser = {
   cpf: string;
   address: string;
   phone: string;
-}
+};
 
 export type CreateUser = {
   name: string;
   email: string;
-  role: string;
+  role?: string;
   password: string;
   confirmPassword: string;
   cpf: string;
   address: string;
   phone: string;
-}
+};
