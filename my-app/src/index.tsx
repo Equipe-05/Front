@@ -4,8 +4,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./index.css";
 import { PageLogin } from "./pages/login/login";
 import { PageCreateUser } from "./pages/createUser/createUser";
-import { Manager } from "./pages/manager/manager";
-import { Franchisee } from "./pages/franchisee/franchisee";
+import { PageManager } from "./pages/manager/manager";
+import { PageFranchisee } from "./pages/franchisee/franchisee";
+import { PageOperator } from "./pages/operator/operator";
+import { PageEmployee } from "./pages/employee/employee";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -16,8 +18,10 @@ root.render(
       <Routes>
         <Route path="/" element={<PageLogin />} />
         <Route path="/create-user" element={<PageCreateUser />} />
-        <Route path="/manager" element={<Manager />} />
-        <Route path="/FRANCHISEE/:id" element={<Franchisee />} />
+        <Route path="/MANAGER/:id" element={<PageManager />} />
+        <Route path="/OPERATOR/:id" element={<PageOperator />} />
+        <Route path="/FRANCHISEE/:id" element={<PageFranchisee />} />
+        <Route path="/EMPLOYEE/:id" element={<PageEmployee />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
