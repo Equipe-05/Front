@@ -1,6 +1,6 @@
 import Menu from "../../components/menus/menu";
 
-export function PageFranchisee() {
+export function PageOperator() {
   return (
     <div>
       <Menu />

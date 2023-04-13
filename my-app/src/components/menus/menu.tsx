@@ -15,6 +15,8 @@ import { Box } from "@mui/system";
 export default function Menu() {
   const navigate = useNavigate();
   const theme = useTheme();
+  const userRole = localStorage.getItem("role");
+  const id = localStorage.getItem("id");
 
   return (
     <>
@@ -46,7 +48,7 @@ export default function Menu() {
             <List component="nav">
               <ListItemButton
                 onClick={() => {
-                  navigate("/");
+                  navigate("/" + userRole + "/" + id);
                 }}
               >
                 <ListItemIcon>
@@ -54,16 +56,19 @@ export default function Menu() {
                 </ListItemIcon>
                 <ListItemText primary="Página inicial" />
               </ListItemButton>
-              <ListItemButton
-                onClick={() => {
-                  navigate("/create-user");
-                }}
-              >
-                <ListItemIcon>
-                  <HowToReg />
-                </ListItemIcon>
-                <ListItemText primary="Cadastrar" />
-              </ListItemButton>
+              {userRole == "EMPLOYEE" ? null : (
+                <ListItemButton
+                  onClick={() => {
+                    navigate("/create-user");
+                  }}
+                >
+                  <ListItemIcon>
+                    <HowToReg />
+                  </ListItemIcon>
+                  <ListItemText primary="Cadastrar" />
+                </ListItemButton>
+              )}
+
               <ListItemButton
                 onClick={() => {
                   navigate("/");

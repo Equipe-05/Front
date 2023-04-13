@@ -4,13 +4,25 @@ import { ContentDiv } from "./createUser-styles";
 import { useNavigate } from "react-router-dom";
 import { CreateUser } from "../../utils/types/requests";
 import { api } from "../../utils/api/api";
+import Menu from "../../components/menus/menu";
 
 export function PageCreateUser() {
   const navigate = useNavigate();
+  const userRole = localStorage.getItem("role");
+  const id = localStorage.getItem("id");
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const isAdmin = "FRANCHISEE";
+
+    let newRole = "";
+
+    if (userRole == "MANAGER") {
+      newRole = "OPERATOR";
+    } else if (userRole == "OPERATOR") {
+      newRole = "FRANCHISEE";
+    } else if (userRole == "FRANCHISEE") {
+      newRole = "EMPLOYEE";
+    }
 
     const newUser: CreateUser = {
       name: e.currentTarget.userName.value,
@@ -23,13 +35,15 @@ export function PageCreateUser() {
     };
 
     let userResponse;
-    const newUser2 = { ...newUser, role: isAdmin };
+    const newUser2 = { ...newUser, role: newRole };
+    console.log(newUser2);
     userResponse = await api.postUser(newUser2);
     console.log(userResponse);
   }
 
   return (
     <div>
+      <Menu />
       <ContentDiv>
         <h2>{"Cadastro de Usuario"}</h2>
         <form onSubmit={handleSubmit}>
@@ -83,13 +97,6 @@ export function PageCreateUser() {
             required
           ></input>
           <button type="submit">{"Cadastrar"}</button>
-          <button
-            onClick={() => {
-              navigate("/");
-            }}
-          >
-            Sair
-          </button>
         </form>
       </ContentDiv>
     </div>

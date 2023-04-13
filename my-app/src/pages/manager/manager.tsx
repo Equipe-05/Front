@@ -1,6 +1,6 @@
 import Menu from "../../components/menus/menu";
 
-export function Manager() {
+export function PageManager() {
   return (
     <div>
       <Menu />
