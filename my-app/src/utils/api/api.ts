@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig } from "axios";
-import { CreateUser, UpdateUser, LoginRequest } from "../types/requests";
+import { CreateUser, UpdateUser, LoginRequest, CreateProduct, UpdateProduct, UpdateProductPlan, UpdateUserRole, UpdateUserPassword } from "../types/requests";
 
 axios.defaults.baseURL = "https://back-production-8e9e.up.railway.app";
 axios.defaults.headers.post["Content-Type"] = "application/json";
@@ -77,9 +77,6 @@ export const api = {
       const response = await axios.patch("/user/" + data.id, {
         name: data.name,
         email: data.email,
-        role: data.role,
-        password: data.password,
-        confirmPassword: data.confirmPassword,
         cpf: data.cpf,
         address: data.address,
         phone: data.phone,
@@ -97,4 +94,85 @@ export const api = {
       alert(error);
     }
   },
+
+  patchUserRoleById: async (data: UpdateUserRole) => {
+    try {
+      const response = await axios.patch("/user/" + data.id + "/role", { role: data.role })
+      return response.data
+    } catch (error) {
+      alert(error)
+    }
+  },
+
+  patchUserPasswordById: async (data: UpdateUserPassword) => {
+    try {
+      const response = await axios.patch("/user/" + data.id + "/password", {
+        password: data.password,
+        confirmPassword: data.confirmPassword,
+        currentPassword: data.currentPassword
+      })
+      return response.data
+    } catch (error) {
+      alert(error)
+    }
+  },
+
+  // PRODUCT
+
+  postProduct: async (data: CreateProduct) => {
+    try {
+      const response = await axios.post("/product", data)
+      return response.data
+    } catch (error) {
+      alert(error);
+    }
+  },
+
+  getAllProducts: async () => {
+    try {
+      const response = await axios.get("/product")
+      return response.data;
+    } catch (error) {
+      alert(error)
+    }
+  },
+
+  getProductById: async (data: UpdateProduct) => {
+    try {
+      const response = await axios.get("/product/" + data.id)
+      return response.data
+    } catch (error) {
+      alert(error)
+    }
+  },
+
+  patchProductById: async (data: UpdateProduct) => {
+    try {
+      const response = await axios.patch("/product/" + data.id, {
+        name: data.name,
+        description: data.description,
+        score: data.score
+      });
+      return response.data;
+    } catch (error) {
+      alert(error)
+    }
+  },
+
+  deleteProductById: async (data: UpdateProduct) => {
+    try {
+      const response = await axios.delete("/product/" + data.id)
+    } catch (error) {
+      alert
+    }
+  },
+
+  patchProductPlanById: async (data: UpdateProductPlan) => {
+    try {
+      const response = await axios.patch("/product/" + data.id + "/plan", { plan: data.plan })
+      return response.data;
+    } catch (error) {
+      alert(error)
+    }
+  }
 };
