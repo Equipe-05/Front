@@ -1,5 +1,14 @@
 import axios, { AxiosRequestConfig } from "axios";
-import { CreateUser, UpdateUser, LoginRequest, CreateProduct, UpdateProduct, UpdateProductPlan, UpdateUserRole, UpdateUserPassword } from "../types/requests";
+import {
+  CreateUser,
+  UpdateUser,
+  LoginRequest,
+  CreateProduct,
+  UpdateProduct,
+  UpdateProductPlan,
+  UpdateUserRole,
+  UpdateUserPassword,
+} from "../types/requests";
 
 axios.defaults.baseURL = "https://back-production-8e9e.up.railway.app";
 axios.defaults.headers.post["Content-Type"] = "application/json";
@@ -97,10 +106,12 @@ export const api = {
 
   patchUserRoleById: async (data: UpdateUserRole) => {
     try {
-      const response = await axios.patch("/user/" + data.id + "/role", { role: data.role })
-      return response.data
+      const response = await axios.patch("/user/" + data.id + "/role", {
+        role: data.role,
+      });
+      return response.data;
     } catch (error) {
-      alert(error)
+      alert(error);
     }
   },
 
@@ -109,11 +120,11 @@ export const api = {
       const response = await axios.patch("/user/" + data.id + "/password", {
         password: data.password,
         confirmPassword: data.confirmPassword,
-        currentPassword: data.currentPassword
-      })
-      return response.data
+        currentPassword: data.currentPassword,
+      });
+      return response.data;
     } catch (error) {
-      alert(error)
+      alert(error);
     }
   },
 
@@ -121,8 +132,8 @@ export const api = {
 
   postProduct: async (data: CreateProduct) => {
     try {
-      const response = await axios.post("/product", data)
-      return response.data
+      const response = await axios.post("/product", data);
+      return response.data;
     } catch (error) {
       alert(error);
     }
@@ -130,19 +141,19 @@ export const api = {
 
   getAllProducts: async () => {
     try {
-      const response = await axios.get("/product")
+      const response = await axios.get("/product");
       return response.data;
     } catch (error) {
-      alert(error)
+      alert(error);
     }
   },
 
   getProductById: async (data: UpdateProduct) => {
     try {
-      const response = await axios.get("/product/" + data.id)
-      return response.data
+      const response = await axios.get("/product/" + data.id);
+      return response.data;
     } catch (error) {
-      alert(error)
+      alert(error);
     }
   },
 
@@ -151,28 +162,30 @@ export const api = {
       const response = await axios.patch("/product/" + data.id, {
         name: data.name,
         description: data.description,
-        score: data.score
+        score: data.score,
       });
       return response.data;
     } catch (error) {
-      alert(error)
+      alert(error);
     }
   },
 
   deleteProductById: async (data: UpdateProduct) => {
     try {
-      const response = await axios.delete("/product/" + data.id)
+      const response = await axios.delete("/product/" + data.id);
     } catch (error) {
-      alert
+      alert(error);
     }
   },
 
   patchProductPlanById: async (data: UpdateProductPlan) => {
     try {
-      const response = await axios.patch("/product/" + data.id + "/plan", { plan: data.plan })
+      const response = await axios.patch("/product/" + data.id + "/plan", {
+        plan: data.plan,
+      });
       return response.data;
     } catch (error) {
-      alert(error)
+      alert(error);
     }
-  }
+  },
 };
