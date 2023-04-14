@@ -59,10 +59,15 @@ export type UpdateProduct = {
   id: string;
   name: string;
   description: string;
-  score: string;
+  score: number;
 }
 
 export type UpdateProductPlan = {
   id: string;
   plan: string;
+}
+
+export type optionPlan = {
+  value: string;
+  label: string;
 }

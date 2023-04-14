@@ -1,3 +1,5 @@
+
+import axios from "axios";
 import axios, { AxiosRequestConfig } from "axios";
 import {
   CreateUser,
@@ -8,6 +10,7 @@ import {
   UpdateProductPlan,
   UpdateUserRole,
   UpdateUserPassword,
+
 } from "../types/requests";
 
 axios.defaults.baseURL = "https://back-production-8e9e.up.railway.app";
