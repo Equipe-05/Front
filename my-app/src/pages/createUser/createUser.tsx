@@ -4,7 +4,7 @@ import { ContentDiv } from "./createUser-styles";
 import { useNavigate } from "react-router-dom";
 import { CreateUser } from "../../utils/types/requests";
 import { api } from "../../utils/api/api";
-import Menu from "../../components/menus/menu";
+import MenuChoice from "../../components/menus/menuChoice";
 
 export function PageCreateUser() {
   const navigate = useNavigate();
@@ -43,7 +43,7 @@ export function PageCreateUser() {
 
   return (
     <div>
-      <Menu />
+      <MenuChoice />
       <ContentDiv>
         <h2>{"Cadastro de Usuario"}</h2>
         <form onSubmit={handleSubmit}>

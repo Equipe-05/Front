@@ -1,9 +1,9 @@
-import Menu from "../../components/menus/menu";
+import MenuChoice from "../../components/menus/menuChoice";
 
 export function PageManager() {
   return (
     <div>
-      <Menu />
+      <MenuChoice />
     </div>
   );
 }
