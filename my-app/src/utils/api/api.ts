@@ -1,5 +1,14 @@
-import axios, { AxiosRequestConfig } from "axios";
-import { CreateUser, UpdateUser, LoginRequest, CreateProduct, UpdateProduct, UpdateProductPlan, UpdateUserRole, UpdateUserPassword } from "../types/requests";
+import axios from "axios";
+import {
+  CreateUser,
+  UpdateUser,
+  LoginRequest,
+  CreateProduct,
+  UpdateProduct,
+  UpdateProductPlan,
+  UpdateUserRole,
+  UpdateUserPassword
+} from "../types/requests";
 
 axios.defaults.baseURL = "https://back-production-8e9e.up.railway.app";
 axios.defaults.headers.post["Content-Type"] = "application/json";
@@ -163,7 +172,7 @@ export const api = {
     try {
       const response = await axios.delete("/product/" + data.id)
     } catch (error) {
-      alert
+      alert(error)
     }
   },
 
