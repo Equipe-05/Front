@@ -1,18 +1,21 @@
 import { Home, HowToReg, Logout } from "@mui/icons-material";
 import {
   Avatar,
+  Button,
   Divider,
   Drawer,
+  Link,
   List,
   ListItemButton,
   ListItemIcon,
   ListItemText,
+  Typography,
   useTheme,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { Box } from "@mui/system";
 
-export default function Menu() {
+export default function MenuEmployee() {
   const navigate = useNavigate();
   const theme = useTheme();
   const userRole = localStorage.getItem("role");
@@ -46,6 +49,9 @@ export default function Menu() {
 
           <Box flex={1}>
             <List component="nav">
+              <Typography align="center" variant="h6">
+                Funcionario
+              </Typography>
               <ListItemButton
                 onClick={() => {
                   navigate("/" + userRole + "/" + id);
@@ -54,20 +60,8 @@ export default function Menu() {
                 <ListItemIcon>
                   <Home />
                 </ListItemIcon>
-                <ListItemText primary="Página inicial" />
+                <ListItemText secondary="Página inicial" />
               </ListItemButton>
-              {userRole == "EMPLOYEE" ? null : (
-                <ListItemButton
-                  onClick={() => {
-                    navigate("/create-user");
-                  }}
-                >
-                  <ListItemIcon>
-                    <HowToReg />
-                  </ListItemIcon>
-                  <ListItemText primary="Cadastrar" />
-                </ListItemButton>
-              )}
 
               <ListItemButton
                 onClick={() => {
