@@ -35,7 +35,6 @@ export const api = {
   login: async ({ email, password }: LoginRequest) => {
     try {
       const response = await axios.post("/auth/signin", { email, password });
-      console.log();
       localStorage.setItem("token", response.data.accessToken);
       return response.data;
     } catch (error) {
@@ -43,7 +42,6 @@ export const api = {
     }
   },
 
-  //GET
   getUser: async () => {
     try {
       const response = await axios.get("/auth/signed");
@@ -196,6 +194,45 @@ export const api = {
     try {
       const response = await axios.post("/franchise", data);
       return response.data;
+    } catch (error) {
+      alert(error);
+    }
+  },
+
+  getAllFranchise: async () => {
+    try {
+      const response = await axios.get("/franchise");
+      return response.data;
+    } catch (error) {
+      alert(error);
+    }
+  },
+
+  geFranchiseById: async (data: UpdateProduct) => {
+    try {
+      const response = await axios.get("/franchise/" + data.id);
+      return response.data;
+    } catch (error) {
+      alert(error);
+    }
+  },
+
+  patchFranchiseById: async (data: UpdateProduct) => {
+    try {
+      const response = await axios.patch("/franchise/" + data.id, {
+        name: data.name,
+        description: data.description,
+        score: data.score,
+      });
+      return response.data;
+    } catch (error) {
+      alert(error);
+    }
+  },
+
+  deleteFranchiseById: async (data: UpdateProduct) => {
+    try {
+      const response = await axios.delete("/franchise/" + data.id);
     } catch (error) {
       alert(error);
     }

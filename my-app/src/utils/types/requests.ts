@@ -80,3 +80,11 @@ export type CreateFranchise = {
   phone: string;
   cnpj: number;
 };
+
+export type UpdateFranchise = {
+  id: string;
+  name: string;
+  address: string;
+  phone: number;
+  cnpj: number;
+};
