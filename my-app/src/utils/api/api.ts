@@ -1,5 +1,3 @@
-
-import axios from "axios";
 import axios, { AxiosRequestConfig } from "axios";
 import {
   CreateUser,
@@ -10,7 +8,7 @@ import {
   UpdateProductPlan,
   UpdateUserRole,
   UpdateUserPassword,
-
+  CreateFranchise,
 } from "../types/requests";
 
 axios.defaults.baseURL = "https://back-production-8e9e.up.railway.app";
@@ -186,6 +184,17 @@ export const api = {
       const response = await axios.patch("/product/" + data.id + "/plan", {
         plan: data.plan,
       });
+      return response.data;
+    } catch (error) {
+      alert(error);
+    }
+  },
+
+  // PRODUCT
+
+  postFranchise: async (data: CreateFranchise) => {
+    try {
+      const response = await axios.post("/franchise", data);
       return response.data;
     } catch (error) {
       alert(error);

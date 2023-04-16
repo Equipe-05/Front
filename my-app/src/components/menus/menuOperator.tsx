@@ -62,6 +62,7 @@ export default function MenuOperator() {
                 </ListItemIcon>
                 <ListItemText secondary="Página inicial" />
               </ListItemButton>
+
               <Typography align="center" variant="h6">
                 Usuarios
               </Typography>
@@ -75,6 +76,35 @@ export default function MenuOperator() {
                 </ListItemIcon>
                 <ListItemText secondary="Cadastrar Franqueado" />
               </ListItemButton>
+
+              <Typography align="center" variant="h6">
+                Franquias
+              </Typography>
+              <ListItemButton
+                onClick={() => {
+                  navigate("/create-franchise");
+                }}
+              >
+                <ListItemIcon>
+                  <HowToReg />
+                </ListItemIcon>
+                <ListItemText secondary="Cadastrar Franquia" />
+              </ListItemButton>
+
+              <Typography align="center" variant="h6">
+                Produtos
+              </Typography>
+              <ListItemButton
+                onClick={() => {
+                  navigate("/create-product");
+                }}
+              >
+                <ListItemIcon>
+                  <HowToReg />
+                </ListItemIcon>
+                <ListItemText secondary="Cadastrar Produto" />
+              </ListItemButton>
+
               <ListItemButton
                 onClick={() => {
                   navigate("/");
