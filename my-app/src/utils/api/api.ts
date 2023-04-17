@@ -71,9 +71,9 @@ export const api = {
     }
   },
 
-  getUserById: async (data: UpdateUser) => {
+  getUserById: async (id: string) => {
     try {
-      const response = await axios.get("/user/" + data.id);
+      const response = await axios.get("/user/" + id);
       return response.data;
     } catch (error) {
       alert(error);
@@ -95,9 +95,9 @@ export const api = {
     }
   },
 
-  deteleUserById: async (data: UpdateUser) => {
+  deteleUserById: async (id: string) => {
     try {
-      const response = await axios.delete("/user/" + data.id);
+      const response = await axios.delete("/user/" + id);
     } catch (error) {
       alert(error);
     }
@@ -147,9 +147,9 @@ export const api = {
     }
   },
 
-  getProductById: async (data: UpdateProduct) => {
+  getProductById: async (id: string) => {
     try {
-      const response = await axios.get("/product/" + data.id);
+      const response = await axios.get("/product/" + id);
       return response.data;
     } catch (error) {
       alert(error);
@@ -169,9 +169,9 @@ export const api = {
     }
   },
 
-  deleteProductById: async (data: UpdateProduct) => {
+  deleteProductById: async (id: string) => {
     try {
-      const response = await axios.delete("/product/" + data.id);
+      const response = await axios.delete("/product/" + id);
     } catch (error) {
       alert(error);
     }
