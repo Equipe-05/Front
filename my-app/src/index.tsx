@@ -8,7 +8,8 @@ import { PageManager } from "./pages/manager/manager";
 import { PageFranchisee } from "./pages/franchisee/franchisee";
 import { PageOperator } from "./pages/operator/operator";
 import { PageEmployee } from "./pages/employee/employee";
-import { CreateProduct } from "./pages/createProduct/create-product";
+import { CreateProduct } from "./components/forms/create/Product/createProduct";
+import UpdateProductForm from "./components/forms/update/updateProduct";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -24,6 +25,7 @@ root.render(
         <Route path="/FRANCHISEE/:id" element={<PageFranchisee />} />
         <Route path="/EMPLOYEE/:id" element={<PageEmployee />} />
         <Route path="/MANAGER/:id" element={<CreateProduct />} />
+        <Route path="/product/:id" element={<UpdateProductForm />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

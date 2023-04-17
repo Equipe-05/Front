@@ -1,6 +1,6 @@
-import React, { ChangeEvent, FormEvent, useState } from 'react'
-import { api } from '../../utils/api/api';
-import { optionPlan } from '../../utils/types/requests';
+import React, { FormEvent, useState } from 'react'
+import { api } from '../../../../utils/api/api';
+import { optionPlan } from '../../../../utils/types/requests';
 
 export function CreateProduct() {
 

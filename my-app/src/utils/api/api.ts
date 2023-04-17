@@ -1,6 +1,4 @@
-
 import axios from "axios";
-import axios, { AxiosRequestConfig } from "axios";
 import {
   CreateUser,
   UpdateUser,
@@ -10,7 +8,6 @@ import {
   UpdateProductPlan,
   UpdateUserRole,
   UpdateUserPassword,
-
 } from "../types/requests";
 
 axios.defaults.baseURL = "https://back-production-8e9e.up.railway.app";
@@ -151,9 +148,9 @@ export const api = {
     }
   },
 
-  getProductById: async (data: UpdateProduct) => {
+  getProductById: async (id: string) => {
     try {
-      const response = await axios.get("/product/" + data.id);
+      const response = await axios.get("/product/" + id);
       return response.data;
     } catch (error) {
       alert(error);
@@ -173,9 +170,9 @@ export const api = {
     }
   },
 
-  deleteProductById: async (data: UpdateProduct) => {
+  deleteProductById: async (id: string) => {
     try {
-      const response = await axios.delete("/product/" + data.id);
+      const response = await axios.delete("/product/" + id);
     } catch (error) {
       alert(error);
     }
