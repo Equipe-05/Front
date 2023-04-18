@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
-import { api } from "../../utils/api/api";
-import { optionPlan } from "../../utils/types/requests";
-import MenuChoice from "../../components/menus/menuChoice";
+import { api } from "../../../../utils/api/api";
+import { optionPlan } from "../../../../utils/types/requests";
+import MenuChoice from "../../../menus/menuChoice";
 import { DivProduct } from "./create-product-styles";
 
 export function CreateProduct() {

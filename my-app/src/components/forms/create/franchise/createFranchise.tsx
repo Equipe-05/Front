@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
-import { api } from "../../utils/api/api";
-import { CreateFranchise } from "../../utils/types/requests";
-import MenuChoice from "../../components/menus/menuChoice";
+import { api } from "../../../../utils/api/api";
+import { CreateFranchise } from "../../../../utils/types/requests";
+import MenuChoice from "../../../menus/menuChoice";
 import { DivFranchise } from "./createFranchise-styles";
 
 export function PageCreateFranchise() {

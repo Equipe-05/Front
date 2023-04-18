@@ -2,9 +2,9 @@ import React from "react";
 import { FormEvent, useState } from "react";
 import { ContentDiv } from "./createUser-styles";
 import { useNavigate } from "react-router-dom";
-import { CreateUser } from "../../utils/types/requests";
-import { api } from "../../utils/api/api";
-import MenuChoice from "../../components/menus/menuChoice";
+import { CreateUser } from "../../../../utils/types/requests";
+import { api } from "../../../../utils/api/api";
+import MenuChoice from "../../../menus/menuChoice";
 
 export function PageCreateUser() {
   const navigate = useNavigate();
