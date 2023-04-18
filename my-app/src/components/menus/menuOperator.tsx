@@ -76,6 +76,16 @@ export default function MenuOperator() {
                 </ListItemIcon>
                 <ListItemText secondary="Cadastrar Franqueado" />
               </ListItemButton>
+              <ListItemButton
+                onClick={() => {
+                  navigate("/update-user");
+                }}
+              >
+                <ListItemIcon>
+                  <HowToReg />
+                </ListItemIcon>
+                <ListItemText secondary="Editar Franqueado" />
+              </ListItemButton>
 
               <Typography align="center" variant="h6">
                 Franquias
@@ -103,6 +113,17 @@ export default function MenuOperator() {
                   <HowToReg />
                 </ListItemIcon>
                 <ListItemText secondary="Cadastrar Produto" />
+              </ListItemButton>
+
+              <ListItemButton
+                onClick={() => {
+                  navigate("/update-product");
+                }}
+              >
+                <ListItemIcon>
+                  <HowToReg />
+                </ListItemIcon>
+                <ListItemText secondary="Editar Produto" />
               </ListItemButton>
 
               <ListItemButton
