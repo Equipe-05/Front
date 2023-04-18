@@ -86,5 +86,5 @@ export type UpdateFranchise = {
   name: string;
   address: string;
   phone: number;
-  cnpj: number;
+  cnpj: string;
 };

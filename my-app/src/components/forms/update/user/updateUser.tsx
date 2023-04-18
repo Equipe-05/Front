@@ -71,9 +71,7 @@ export function UpdateUserForm() {
           </div>
 
           <button type="submit">Editar</button>
-          <button type="button" onClick={HandleDelete}>
-            Deletar
-          </button>
+          <button type="button" onClick={HandleDelete}>Deletar</button>
         </form>
       </DivUpdateUser>
     </div>

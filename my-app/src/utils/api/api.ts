@@ -9,6 +9,7 @@ import {
   UpdateUserRole,
   UpdateUserPassword,
   CreateFranchise,
+  UpdateFranchise,
 } from "../types/requests";
 
 axios.defaults.baseURL = "https://back-production-8e9e.up.railway.app";
@@ -208,21 +209,22 @@ export const api = {
     }
   },
 
-  geFranchiseById: async (data: UpdateProduct) => {
+  getFranchiseById: async (id: string) => {
     try {
-      const response = await axios.get("/franchise/" + data.id);
+      const response = await axios.get("/franchise/" + id);
       return response.data;
     } catch (error) {
       alert(error);
     }
   },
 
-  patchFranchiseById: async (data: UpdateProduct) => {
+  patchFranchiseById: async (data: UpdateFranchise) => {
     try {
       const response = await axios.patch("/franchise/" + data.id, {
         name: data.name,
-        description: data.description,
-        score: data.score,
+        adress: data.address,
+        phone: data.phone,
+        cnpj: data.cnpj
       });
       return response.data;
     } catch (error) {
@@ -230,9 +232,9 @@ export const api = {
     }
   },
 
-  deleteFranchiseById: async (data: UpdateProduct) => {
+  deleteFranchiseById: async (id: string) => {
     try {
-      const response = await axios.delete("/franchise/" + data.id);
+      const response = await axios.delete("/franchise/" + id);
     } catch (error) {
       alert(error);
     }
