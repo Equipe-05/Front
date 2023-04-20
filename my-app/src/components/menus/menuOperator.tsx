@@ -1,4 +1,4 @@
-import { Home, HowToReg, Logout } from "@mui/icons-material";
+import { Edit, Home, HowToReg, Logout } from "@mui/icons-material";
 import {
   Avatar,
   Button,
@@ -63,6 +63,17 @@ export default function MenuOperator() {
                 <ListItemText secondary="Página inicial" />
               </ListItemButton>
 
+              <ListItemButton
+                onClick={() => {
+                  navigate("/update-user");
+                }}
+              >
+                <ListItemIcon>
+                  <Edit />
+                </ListItemIcon>
+                <ListItemText secondary="Editar meu Usuario" />
+              </ListItemButton>
+
               <Typography align="center" variant="h6">
                 Usuarios
               </Typography>
@@ -75,16 +86,6 @@ export default function MenuOperator() {
                   <HowToReg />
                 </ListItemIcon>
                 <ListItemText secondary="Cadastrar Franqueado" />
-              </ListItemButton>
-              <ListItemButton
-                onClick={() => {
-                  navigate("/update-user");
-                }}
-              >
-                <ListItemIcon>
-                  <HowToReg />
-                </ListItemIcon>
-                <ListItemText secondary="Editar Franqueado" />
               </ListItemButton>
 
               <Typography align="center" variant="h6">

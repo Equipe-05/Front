@@ -1,4 +1,4 @@
-import { Home, HowToReg, Logout } from "@mui/icons-material";
+import { Edit, Home, HowToReg, Logout } from "@mui/icons-material";
 import {
   Avatar,
   Button,
@@ -62,6 +62,18 @@ export default function MenuManager() {
                 </ListItemIcon>
                 <ListItemText secondary="Página inicial" />
               </ListItemButton>
+
+              <ListItemButton
+                onClick={() => {
+                  navigate("/update-user");
+                }}
+              >
+                <ListItemIcon>
+                  <Edit />
+                </ListItemIcon>
+                <ListItemText secondary="Editar meu Usuario" />
+              </ListItemButton>
+
               <Typography align="center" variant="h6">
                 Usuarios
               </Typography>

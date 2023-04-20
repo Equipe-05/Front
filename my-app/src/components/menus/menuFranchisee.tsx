@@ -1,4 +1,4 @@
-import { Home, HowToReg, Logout } from "@mui/icons-material";
+import { Edit, Home, HowToReg, Logout } from "@mui/icons-material";
 import {
   Avatar,
   Button,
@@ -62,6 +62,18 @@ export default function MenuFranchisee() {
                 </ListItemIcon>
                 <ListItemText secondary="Página inicial" />
               </ListItemButton>
+
+              <ListItemButton
+                onClick={() => {
+                  navigate("/update-user");
+                }}
+              >
+                <ListItemIcon>
+                  <Edit />
+                </ListItemIcon>
+                <ListItemText secondary="Editar meu Usuario" />
+              </ListItemButton>
+
               <Typography align="center" variant="h6">
                 Usuarios
               </Typography>
@@ -75,6 +87,21 @@ export default function MenuFranchisee() {
                 </ListItemIcon>
                 <ListItemText secondary="Cadastrar Funcionario" />
               </ListItemButton>
+
+              <Typography align="center" variant="h6">
+                Franquia
+              </Typography>
+              <ListItemButton
+                onClick={() => {
+                  navigate("/update-franchise");
+                }}
+              >
+                <ListItemIcon>
+                  <Edit />
+                </ListItemIcon>
+                <ListItemText secondary="Editar Franquia" />
+              </ListItemButton>
+
               <ListItemButton
                 onClick={() => {
                   navigate("/");

@@ -2,11 +2,13 @@ import styled from "styled-components";
 
 export const ContentDiv = styled.div`
   display: flex;
-  height: 100%;
-  width: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 80%;
+  max-width: 100%;
+  border-radius: 10px;
+  height: 100%;
   h2 {
     margin: 20px;
     font-size: 35px;
