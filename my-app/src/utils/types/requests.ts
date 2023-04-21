@@ -88,3 +88,21 @@ export type UpdateFranchise = {
   phone: number;
   cnpj: string;
 };
+
+// CUSTOMER
+
+export type CreateCustomer = {
+  name: string;
+  cnpj: string;
+  address: string;
+  phone: string;
+  franchiseId: string;
+};
+
+export type UpdateCustomer = {
+  id: string;
+  name: string;
+  address: string;
+  phone: string;
+  cnpj: string;
+};

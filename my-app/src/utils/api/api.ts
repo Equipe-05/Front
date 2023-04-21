@@ -10,6 +10,8 @@ import {
   UpdateUserPassword,
   CreateFranchise,
   UpdateFranchise,
+  CreateCustomer,
+  UpdateCustomer,
 } from "../types/requests";
 
 axios.defaults.baseURL = "https://back-production-8e9e.up.railway.app";
@@ -189,7 +191,7 @@ export const api = {
     }
   },
 
-  // PRODUCT
+  // FRANCHISE
 
   postFranchise: async (data: CreateFranchise) => {
     try {
@@ -224,7 +226,7 @@ export const api = {
         name: data.name,
         adress: data.address,
         phone: data.phone,
-        cnpj: data.cnpj
+        cnpj: data.cnpj,
       });
       return response.data;
     } catch (error) {
@@ -235,6 +237,57 @@ export const api = {
   deleteFranchiseById: async (id: string) => {
     try {
       const response = await axios.delete("/franchise/" + id);
+    } catch (error) {
+      alert(error);
+    }
+  },
+
+  //CUSTOMER
+
+  postCustomer: async (data: CreateCustomer) => {
+    try {
+      const response = await axios.post("/customer", data);
+      return response.data;
+    } catch (error) {
+      alert(error);
+    }
+  },
+
+  getAllCustomer: async () => {
+    try {
+      const response = await axios.get("/customer");
+      return response.data;
+    } catch (error) {
+      alert(error);
+    }
+  },
+
+  getCustomerById: async (id: string) => {
+    try {
+      const response = await axios.get("/customer/" + id);
+      return response.data;
+    } catch (error) {
+      alert(error);
+    }
+  },
+
+  patchCustomerById: async (data: UpdateCustomer) => {
+    try {
+      const response = await axios.patch("/customer/" + data.id, {
+        name: data.name,
+        adress: data.address,
+        phone: data.phone,
+        cnpj: data.cnpj,
+      });
+      return response.data;
+    } catch (error) {
+      alert(error);
+    }
+  },
+
+  deleteCustomerById: async (id: string) => {
+    try {
+      const response = await axios.delete("/Customer/" + id);
     } catch (error) {
       alert(error);
     }

@@ -93,6 +93,17 @@ export default function MenuFranchisee() {
               </Typography>
               <ListItemButton
                 onClick={() => {
+                  navigate("/create-customer");
+                }}
+              >
+                <ListItemIcon>
+                  <HowToReg />
+                </ListItemIcon>
+                <ListItemText secondary="Cadastrar Cliente" />
+              </ListItemButton>
+
+              <ListItemButton
+                onClick={() => {
                   navigate("/update-franchise");
                 }}
               >
