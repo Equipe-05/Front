@@ -89,6 +89,20 @@ export default function MenuFranchisee() {
               </ListItemButton>
 
               <Typography align="center" variant="h6">
+                Vendas
+              </Typography>
+              <ListItemButton
+                onClick={() => {
+                  navigate("/create-sale");
+                }}
+              >
+                <ListItemIcon>
+                  <HowToReg />
+                </ListItemIcon>
+                <ListItemText secondary="Efetuar Venda" />
+              </ListItemButton>
+
+              <Typography align="center" variant="h6">
                 Franquia
               </Typography>
               <ListItemButton
