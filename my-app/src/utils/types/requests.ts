@@ -106,3 +106,18 @@ export type UpdateCustomer = {
   phone: string;
   cnpj: string;
 };
+
+// SALE
+
+export type CreateSale = {
+  description: string;
+  customerId: string;
+  franchiseId: string;
+  productId: string;
+  userId: string;
+};
+
+export type UpdateSale = {
+  id: string;
+  description: string;
+};
