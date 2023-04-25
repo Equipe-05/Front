@@ -15,6 +15,7 @@ import { UpdateFranchisePage } from "./pages/updateFranchise/updateFranchisePage
 import { UpdateProductPage } from "./pages/updateProduct/updateProductPage";
 import { CreateCustomerPage } from "./pages/createCustomer/createCustomerPage";
 import { TableFranchise } from "./components/tables/tableFranchise";
+import { CreateSalePage } from "./pages/createSale/createSalePage";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -28,6 +29,7 @@ root.render(
         <Route path="/create-product" element={<CreateProductPage />} />
         <Route path="/create-franchise" element={<CreateFranchisePage />} />
         <Route path="/create-customer" element={<CreateCustomerPage />} />
+        <Route path="/create-sale" element={<CreateSalePage />} />
         <Route path="/update-product" element={<UpdateProductPage />} />
         <Route path="/update-user" element={<UpdateUserPage />} />
         <Route path="/update-franchise" element={<UpdateFranchisePage />} />
