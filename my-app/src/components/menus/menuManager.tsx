@@ -89,6 +89,16 @@ export default function MenuManager() {
               </ListItemButton>
               <ListItemButton
                 onClick={() => {
+                  navigate("/all-franchise");
+                }}
+              >
+                <ListItemIcon>
+                  <HowToReg />
+                </ListItemIcon>
+                <ListItemText secondary="Todas as Franquias" />
+              </ListItemButton>
+              <ListItemButton
+                onClick={() => {
                   navigate("/");
                 }}
               >
