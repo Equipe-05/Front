@@ -121,3 +121,12 @@ export type UpdateSale = {
   id: string;
   description: string;
 };
+
+export type Sale = {
+  id: string;
+  description: string;
+  customerId: string;
+  franchiseId: string;
+  productId: string;
+  userId: string;
+};
