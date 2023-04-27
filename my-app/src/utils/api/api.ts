@@ -345,8 +345,7 @@ export const api = {
 
   getFranchiseSaleById: async (franchiseId: string) => {
     try {
-      const response = await axios.get("/sale/franchise/" + franchiseId);
-      return response.data
+      const response = await axios.get("/sale/franchise" + franchiseId);
     } catch (error) {
       alert(error);
     }

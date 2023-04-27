@@ -14,9 +14,10 @@ import { UpdateUserPage } from "./pages/updateUser/updateUserPage";
 import { UpdateFranchisePage } from "./pages/updateFranchise/updateFranchisePage";
 import { UpdateProductPage } from "./pages/updateProduct/updateProductPage";
 import { CreateCustomerPage } from "./pages/createCustomer/createCustomerPage";
-import { TableFranchise } from "./components/tables/tableFranchise";
 import { CreateSalePage } from "./pages/createSale/createSalePage";
 import { TableSale } from "./components/tables/tableSale";
+import { AllFranchisePage } from "./pages/allFranchise/allFranchisePage";
+import { AllCustomerPage } from "./pages/allCustomer/allCustomerPage";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -34,7 +35,8 @@ root.render(
         <Route path="/update-product" element={<UpdateProductPage />} />
         <Route path="/update-user" element={<UpdateUserPage />} />
         <Route path="/update-franchise" element={<UpdateFranchisePage />} />
-        <Route path="/all-franchise" element={<TableFranchise />} />
+        <Route path="/all-franchise" element={<AllFranchisePage />} />
+        <Route path="/all-customer" element={<AllCustomerPage />} />
         <Route path="/MANAGER/:id" element={<PageManager />} />
         <Route path="/OPERATOR/:id" element={<PageOperator />} />
         <Route path="/FRANCHISEE/:id" element={<PageFranchisee />} />

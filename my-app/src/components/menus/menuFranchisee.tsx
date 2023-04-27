@@ -103,7 +103,7 @@ export default function MenuFranchisee() {
               </ListItemButton>
 
               <Typography align="center" variant="h6">
-                Franquia
+                Clientes
               </Typography>
               <ListItemButton
                 onClick={() => {
@@ -118,13 +118,13 @@ export default function MenuFranchisee() {
 
               <ListItemButton
                 onClick={() => {
-                  navigate("/update-franchise");
+                  navigate("/all-customer");
                 }}
               >
                 <ListItemIcon>
                   <Edit />
                 </ListItemIcon>
-                <ListItemText secondary="Editar Franquia" />
+                <ListItemText secondary="Visualizar Clientes" />
               </ListItemButton>
 
               <ListItemButton

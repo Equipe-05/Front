@@ -87,6 +87,10 @@ export default function MenuManager() {
                 </ListItemIcon>
                 <ListItemText secondary="Cadastrar Operador" />
               </ListItemButton>
+
+              <Typography align="center" variant="h6">
+                Franquias
+              </Typography>
               <ListItemButton
                 onClick={() => {
                   navigate("/all-franchise");
@@ -95,8 +99,9 @@ export default function MenuManager() {
                 <ListItemIcon>
                   <HowToReg />
                 </ListItemIcon>
-                <ListItemText secondary="Todas as Franquias" />
+                <ListItemText secondary="Visualizar Franquias" />
               </ListItemButton>
+
               <ListItemButton
                 onClick={() => {
                   navigate("/");

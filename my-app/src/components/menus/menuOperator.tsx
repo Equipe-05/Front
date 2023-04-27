@@ -102,6 +102,17 @@ export default function MenuOperator() {
                 <ListItemText secondary="Cadastrar Franquia" />
               </ListItemButton>
 
+              <ListItemButton
+                onClick={() => {
+                  navigate("/all-franchise");
+                }}
+              >
+                <ListItemIcon>
+                  <HowToReg />
+                </ListItemIcon>
+                <ListItemText secondary="Visualizar Franquias" />
+              </ListItemButton>
+
               <Typography align="center" variant="h6">
                 Produtos
               </Typography>
