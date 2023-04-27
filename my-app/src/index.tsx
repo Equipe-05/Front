@@ -16,6 +16,7 @@ import { UpdateProductPage } from "./pages/updateProduct/updateProductPage";
 import { CreateCustomerPage } from "./pages/createCustomer/createCustomerPage";
 import { TableFranchise } from "./components/tables/tableFranchise";
 import { CreateSalePage } from "./pages/createSale/createSalePage";
+import { TableSale } from "./components/tables/tableSale";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -38,6 +39,7 @@ root.render(
         <Route path="/OPERATOR/:id" element={<PageOperator />} />
         <Route path="/FRANCHISEE/:id" element={<PageFranchisee />} />
         <Route path="/EMPLOYEE/:id" element={<PageEmployee />} />
+        <Route path="/sale/franchise/:id" element={<TableSale />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

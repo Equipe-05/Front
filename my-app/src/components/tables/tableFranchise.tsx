@@ -9,6 +9,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import { useNavigate } from 'react-router-dom';
 
 const StyledTableCell = withStyles((theme: Theme) =>
     createStyles({
@@ -39,12 +40,18 @@ const useStyles = makeStyles({
 });
 
 export function TableFranchise() {
+    const navigate = useNavigate()
     const classes = useStyles();
     const [franchises, setFranchises] = useState<UpdateFranchise[]>([])
-
+    
     async function SelectFranchises() {
         const result = await api.getAllFranchise()
         setFranchises(result)
+    }
+
+    async function HandleClick(id: string) {
+        localStorage.setItem("franchiseId", id)
+        navigate("/sale/franchise/" + id)
     }
 
     useEffect(() => {
@@ -65,7 +72,7 @@ export function TableFranchise() {
                 <TableBody>
                     {franchises.map((franchise) => (
                         <StyledTableRow key={franchise.id}>
-                            <StyledTableCell component="th" scope="row">
+                            <StyledTableCell onClick={() => HandleClick(franchise.id)} component="th" scope="row">
                                 {franchise.name}
                             </StyledTableCell>
                             <StyledTableCell align="right">{franchise.cnpj}</StyledTableCell>
