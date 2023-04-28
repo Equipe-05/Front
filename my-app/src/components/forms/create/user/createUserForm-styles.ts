@@ -5,49 +5,60 @@ export const ContentDiv = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 80%;
+  width: 100%;
   max-width: 100%;
-  border-radius: 10px;
+  min-height: 100vh;
   height: 100%;
-  h2 {
+  background-color: #062594;`
+
+export const TitleForm = styled.h2`
     margin: 20px;
     font-size: 35px;
-  }
-  form {
+`
+
+export const InputContainer = styled.div`
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 85%;
+    gap: 5px;
+`
+export const FormStyle = styled.form`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 450px;
+    min-height: 100%;
     font-size: 20px;
-  }
-  input {
-    border-radius: 10px;
+    background-color: #FFFFFF;
+    gap: 20px;
+    border-radius: 8px 8px 8px 8px;
+`
+export const InputForm = styled.input`
+    border-radius: 5px;
     color: black;
     padding-left: 5px;
     width: 100%;
     font-size: 20px;
-  }
-  section {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    padding-top: 10px;
-  }
-  button {
+    background-color: #F0F0F0;
+    border: none;
+    min-height: 30px;
+`
+export const BtnCadastrar = styled.button`
     display: flex;
     margin: 3px;
-    height: 25px;
+    height: 45px;
     width: 100%;
-    border-radius: 10px;
-    background-color: whitesmoke;
-    color: black;
+    border-radius: 0 0 8px 8px;
+    background-color: #E36C0B;
+    color: #FFFFFF;
     border: none;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     :hover {
-      background-color: blue;
+      background-color: #FFFF;
     }
     font-size: 25px;
-  }
-`;
+    margin-bottom: 0;
+`

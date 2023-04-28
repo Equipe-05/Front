@@ -55,7 +55,7 @@ export function TableSale() {
   }
 
   async function SelectSales(id: string) {
-    const result = await api.getFranchiseSaleById(id);
+    let result = await api.getFranchiseSaleById(id);
     result == null ? "" : setSales(result);
     // setSales(result ?? "");
   }
