@@ -17,7 +17,7 @@ export const ContainerForm = styled.div `
     justify-content: center;
     height: 100vh;
     width: 50%;
-    background-color: #FFFDFD;
+    background-color: #062594;
 `;
 
 export const ImgLogin = styled.img `
@@ -70,3 +70,10 @@ export const BtnLogin = styled.button `
     text-align: center;
     
 `;
+
+export const TitleContainer = styled.div `
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`

@@ -1,6 +1,8 @@
 import React, { FormEvent, useEffect, useState } from "react";
 import { api } from "../../../../utils/api/api";
 import { UpdateUser } from "../../../../utils/types/requests";
+import { FormStyle, InputContainer, InputForm } from "../../create/user/createUserForm-styles";
+import { BtnDeletar, BtnEditar, ContainerBtnFormEdit } from "./styleEdit";
 
 export function UpdateUserForm() {
   const [user, setUser] = useState<UpdateUser>();
@@ -37,38 +39,40 @@ export function UpdateUserForm() {
 
   return (
     <div>
-      <h2>Editar Usuário</h2>
-      <form onSubmit={HandleSubmit}>
-        <div>
+      <FormStyle onSubmit={HandleSubmit}>
+        <h2>Editar Usuário</h2>
+        <InputContainer>
           <label>Nome</label>
-          <input type="text" name="nome" value={user?.name} required />
-        </div>
+          <InputForm type="text" name="nome" value={user?.name} required />
+        </InputContainer>
 
-        <div>
+        <InputContainer>
           <label>Email</label>
-          <input type="text" name="email" value={user?.email} required />
-        </div>
+          <InputForm type="text" name="email" value={user?.email} required />
+        </InputContainer>
 
-        <div>
+        <InputContainer>
           <label>CPF</label>
-          <input type="number" name="cpf" value={user?.cpf} required />
-        </div>
+          <InputForm type="number" name="cpf" value={user?.cpf} required />
+        </InputContainer>
 
-        <div>
+        <InputContainer>
           <label>Endereço</label>
-          <input type="text" name="address" value={user?.address} required />
-        </div>
+          <InputForm type="text" name="address" value={user?.address} required />
+        </InputContainer>
 
-        <div>
+        <InputContainer>
           <label>Telefone</label>
-          <input type="text" name="phone" value={user?.phone} required />
-        </div>
+          <InputForm type="text" name="phone" value={user?.phone} required />
+        </InputContainer>
 
-        <button type="submit">Editar</button>
-        <button type="button" onClick={HandleDelete}>
-          Deletar
-        </button>
-      </form>
+        <ContainerBtnFormEdit>
+          <BtnEditar type="submit">EDITAR</BtnEditar>
+          <BtnDeletar type="button" onClick={HandleDelete}>
+            DELETAR
+          </BtnDeletar>
+        </ContainerBtnFormEdit>
+      </FormStyle>
     </div>
   );
 }

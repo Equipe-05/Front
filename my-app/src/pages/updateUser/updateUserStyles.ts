@@ -7,4 +7,10 @@ export const DivUpdateUser = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: #062594;
+  gap: 30px;
 `;
+
+export const Page = styled.div`
+  display: flex;
+`

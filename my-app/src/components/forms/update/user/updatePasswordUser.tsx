@@ -1,6 +1,8 @@
 import React, { FormEvent, useEffect, useState } from "react";
 import { UpdateUser } from "../../../../utils/types/requests";
 import { api } from "../../../../utils/api/api";
+import { BtnCadastrar, FormStyle, InputContainer, InputForm, TitleForm } from "../../create/user/createUserForm-styles";
+import { ContainerInput } from "../../../../pages/login/login-styled";
 
 export function UpdatePasswordUser() {
   const [user, setUser] = useState<UpdateUser>();
@@ -31,25 +33,25 @@ export function UpdatePasswordUser() {
 
   return (
     <div>
-      <h2>Alterar Senha</h2>
-      <form onSubmit={HandleSubmit}>
-        <div>
+      <FormStyle onSubmit={HandleSubmit}>
+        <TitleForm>Alterar Senha</TitleForm>
+        <InputContainer>
           <label>Nova enha</label>
-          <input type="text" name="senha" required />
-        </div>
+          <InputForm type="text" name="senha" required />
+        </InputContainer>
 
-        <div>
+        <InputContainer>
           <label>Confirme nova senha</label>
-          <input type="text" name="confirmeSenha" required />
-        </div>
+          <InputForm type="text" name="confirmeSenha" required />
+        </InputContainer>
 
-        <div>
+        <InputContainer>
           <label>Senha antiga</label>
-          <input type="text" name="senhaAntiga" required />
-        </div>
+          <InputForm type="text" name="senhaAntiga" required />
+        </InputContainer>
 
-        <button type="submit">Alterar senha</button>
-      </form>
+        <BtnCadastrar type="submit">ALTERAR SENHA</BtnCadastrar>
+      </FormStyle>
     </div>
   );
 }
