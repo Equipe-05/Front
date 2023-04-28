@@ -345,7 +345,8 @@ export const api = {
 
   getFranchiseSaleById: async (franchiseId: string) => {
     try {
-      const response = await axios.get("/sale/franchise" + franchiseId);
+      console.log(franchiseId);
+      const response = await axios.get("/sale/franchise/" + franchiseId);
     } catch (error) {
       alert(error);
     }
@@ -353,7 +354,7 @@ export const api = {
 
   getCustomerSaleById: async (customerId: string) => {
     try {
-      const response = await axios.get("/sale/customer" + customerId);
+      const response = await axios.get("/sale/customer/" + customerId);
     } catch (error) {
       alert(error);
     }
@@ -361,7 +362,7 @@ export const api = {
 
   getUserSaleById: async (userId: string) => {
     try {
-      const response = await axios.get("/sale/user" + userId);
+      const response = await axios.get("/sale/user/" + userId);
     } catch (error) {
       alert(error);
     }
@@ -369,7 +370,7 @@ export const api = {
 
   getProductSaleById: async (productId: string) => {
     try {
-      const response = await axios.get("/sale/product" + productId);
+      const response = await axios.get("/sale/product/" + productId);
     } catch (error) {
       alert(error);
     }

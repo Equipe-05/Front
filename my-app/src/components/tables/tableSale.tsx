@@ -14,6 +14,7 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import { DivTable } from "./tableStyle";
 
 const StyledTableCell = withStyles((theme: Theme) =>
   createStyles({
@@ -67,31 +68,35 @@ export function TableSale() {
 
   return (
     <TableContainer component={Paper}>
-      <Table className={classes.table} aria-label="customized table">
-        <TableHead>
-          <TableRow>
-            <StyledTableCell>Descrição</StyledTableCell>
-            <StyledTableCell align="right">ID Cliente</StyledTableCell>
-            <StyledTableCell align="right">ID Franquia</StyledTableCell>
-            <StyledTableCell align="right">ID Produto</StyledTableCell>
-            <StyledTableCell align="right">ID Usuário</StyledTableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {Sales.map((sale) => (
-            <StyledTableRow key={sale.id}>
-              <StyledTableCell component="th" scope="row">
-                {sale.description}
-              </StyledTableCell>
-              <StyledTableCell align="right">{sale.customerId}</StyledTableCell>
-              <StyledTableCell align="right">
-                {sale.franchiseId}
-              </StyledTableCell>
-              <StyledTableCell align="right">{sale.userId}</StyledTableCell>
-            </StyledTableRow>
-          ))}
-        </TableBody>
-      </Table>
+      <DivTable>
+        <Table className={classes.table} aria-label="customized table">
+          <TableHead>
+            <TableRow>
+              <StyledTableCell>Descrição</StyledTableCell>
+              <StyledTableCell align="right">ID Cliente</StyledTableCell>
+              <StyledTableCell align="right">ID Franquia</StyledTableCell>
+              <StyledTableCell align="right">ID Produto</StyledTableCell>
+              <StyledTableCell align="right">ID Usuário</StyledTableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {Sales.map((sale) => (
+              <StyledTableRow key={sale.id}>
+                <StyledTableCell component="th" scope="row">
+                  {sale.description}
+                </StyledTableCell>
+                <StyledTableCell align="right">
+                  {sale.customerId}
+                </StyledTableCell>
+                <StyledTableCell align="right">
+                  {sale.franchiseId}
+                </StyledTableCell>
+                <StyledTableCell align="right">{sale.userId}</StyledTableCell>
+              </StyledTableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </DivTable>
     </TableContainer>
   );
 }
