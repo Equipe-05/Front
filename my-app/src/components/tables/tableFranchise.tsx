@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { UpdateFranchise } from "../../utils/types/requests";
-import { api } from "../../utils/api/api";
 import {
   withStyles,
   Theme,
@@ -15,7 +13,10 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import { useNavigate } from "react-router-dom";
-import { DivTable } from "./tableStyle";
+import { Button } from "@mui/material";
+import { DivTableFranchise } from "./tableFranchiseStyle";
+import { UpdateFranchise } from "../../utils/types/requests";
+import { api } from "../../utils/api/api";
 
 const StyledTableCell = withStyles((theme: Theme) =>
   createStyles({
@@ -60,13 +61,18 @@ export function TableFranchise() {
     navigate("/sale/franchise/" + id);
   }
 
+  async function HandleClickUser(id: string) {
+    localStorage.setItem("franchiseId", id);
+    navigate("/sale/franchise/byUser/" + id);
+  }
+
   useEffect(() => {
     SelectFranchises();
   }, []);
 
   return (
     <TableContainer component={Paper}>
-      <DivTable>
+      <DivTableFranchise>
         <Table className={classes.table} aria-label="customized table">
           <TableHead>
             <TableRow>
@@ -74,6 +80,7 @@ export function TableFranchise() {
               <StyledTableCell align="right">CNPJ</StyledTableCell>
               <StyledTableCell align="right">Telefone</StyledTableCell>
               <StyledTableCell align="right">Endereço</StyledTableCell>
+              <StyledTableCell align="right">Vincular Usuario</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -95,11 +102,21 @@ export function TableFranchise() {
                 <StyledTableCell align="right">
                   {franchise.address}
                 </StyledTableCell>
+                <StyledTableCell>
+                  {
+                    <Button
+                      onClick={() => HandleClickUser(franchise.id)}
+                      variant="contained"
+                    >
+                      Vincular Usuario
+                    </Button>
+                  }
+                </StyledTableCell>
               </StyledTableRow>
             ))}
           </TableBody>
         </Table>
-      </DivTable>
+      </DivTableFranchise>
     </TableContainer>
   );
 }
