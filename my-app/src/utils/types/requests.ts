@@ -23,6 +23,12 @@ export type UpdateUser = {
   phone: string;
 };
 
+export type UserFranchise = {
+  id: string;
+  name: string;
+  email: string;
+};
+
 export type CreateUser = {
   name: string;
   email: string;

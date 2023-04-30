@@ -64,7 +64,7 @@ export function TableFranchise() {
 
   async function HandleClickUser(id: string) {
     localStorage.setItem("franchiseId", id);
-    navigate("/sale/franchise/byUser/" + id);
+    navigate("/user-franchise");
   }
 
   useEffect(() => {
