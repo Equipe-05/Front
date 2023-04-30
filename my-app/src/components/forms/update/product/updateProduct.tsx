@@ -1,7 +1,8 @@
 import React, { FormEvent, useEffect, useState } from "react";
 import { UpdateProduct } from "../../../../utils/types/requests";
 import { api } from "../../../../utils/api/api";
-import { useParams } from "react-router-dom";
+import { FormStyle, InputContainer, InputForm } from "../../create/user/createUserForm-styles";
+import { BtnDeletar, BtnEditar } from "../user/styleEdit";
 
 export default function UpdateProductForm() {
   const [product, setProduct] = useState<UpdateProduct>();
@@ -39,37 +40,37 @@ export default function UpdateProductForm() {
   return (
     <div>
       <h2>Editar Produto</h2>
-      <form onSubmit={HandleSubmit}>
-        <div>
+      <FormStyle onSubmit={HandleSubmit}>
+        <InputContainer>
           <label>Nome</label>
-          <input type="text" name="nome" value={product?.name} required />
-        </div>
+          <InputForm type="text" name="nome" value={product?.name} required />
+        </InputContainer>
 
-        <div>
+        <InputContainer>
           <label>Descrição</label>
-          <input
+          <InputForm
             type="text"
             name="descricao"
             value={product?.description}
             required
           />
-        </div>
+        </InputContainer>
 
-        <div>
+        <InputContainer>
           <label>Score</label>
-          <input
+          <InputForm
             type="number"
             name="pontuacao"
             value={product?.score}
             required
           />
-        </div>
+        </InputContainer>
 
-        <button type="submit">Editar</button>
-        <button type="button" onClick={HandleDelete}>
+        <BtnEditar type="submit">Editar</BtnEditar>
+        <BtnDeletar type="button" onClick={HandleDelete}>
           Deletar
-        </button>
-      </form>
+        </BtnDeletar>
+      </FormStyle>
     </div>
   );
 }

@@ -2,6 +2,7 @@ import React, { ChangeEvent, FormEvent, useState } from "react";
 import { api } from "../../../../utils/api/api";
 import { CreateCustomer } from "../../../../utils/types/requests";
 import { DivCustomer } from "./createCustomerForm-styles";
+import { BtnCadastrar, FormStyle, InputContainer, InputForm, TitleForm } from "../user/createUserForm-styles";
 
 export function CreateCustomerForm() {
   async function HandleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -22,38 +23,38 @@ export function CreateCustomerForm() {
 
   return (
     <DivCustomer>
-      <h2>Adicionar Cliente</h2>
-      <form onSubmit={HandleSubmit}>
-        <div>
+      <FormStyle onSubmit={HandleSubmit}>
+        <TitleForm>Adicionar Cliente</TitleForm>
+        <InputContainer>
           <label>Nome</label>
-          <input placeholder="Ex: John Doe" name="nome" />
-        </div>
+          <InputForm placeholder="Ex: John Doe" name="nome" />
+        </InputContainer>
 
-        <div>
+        <InputContainer>
           <label>Endereço</label>
-          <input placeholder="Ex: Rua dos Bobos" name="address" />
-        </div>
+          <InputForm placeholder="Ex: Rua dos Bobos" name="address" />
+        </InputContainer>
 
-        <div>
+        <InputContainer>
           <label>Telefone</label>
-          <input placeholder="Ex: 11 98888-8888" name="phone" />
-        </div>
+          <InputForm placeholder="Ex: 11 98888-8888" name="phone" />
+        </InputContainer>
 
-        <div>
+        <InputContainer>
           <label>CNPJ</label>
-          <input placeholder="Ex: 11.111.111/1111-01" name="cnpj" />
-        </div>
+          <InputForm placeholder="Ex: 11.111.111/1111-01" name="cnpj" />
+        </InputContainer>
 
-        <div>
+        <InputContainer>
           <label>Id Franquia</label>
-          <input
+          <InputForm
             placeholder="Ex: f88c5ef9-badb-4523-af6e-dbea69aadb3c"
             name="franchiseId"
           />
-        </div>
+        </InputContainer>
 
-        <button type="submit">Cadastrar</button>
-      </form>
+        <BtnCadastrar type="submit">Cadastrar</BtnCadastrar>
+      </FormStyle>
     </DivCustomer>
   );
 }

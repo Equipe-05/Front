@@ -2,6 +2,7 @@ import React, { ChangeEvent, FormEvent, useState } from "react";
 import { api } from "../../../../utils/api/api";
 import { CreateSale } from "../../../../utils/types/requests";
 import { DivSale } from "./createSaleForm-styles";
+import { BtnCadastrar, FormStyle, InputContainer, InputForm, TitleForm } from "../user/createUserForm-styles";
 
 export function CreateSaleForm() {
   async function HandleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -22,50 +23,50 @@ export function CreateSaleForm() {
 
   return (
     <DivSale>
-      <h2>Criar Venda</h2>
-      <form onSubmit={HandleSubmit}>
-        <div>
+      <FormStyle onSubmit={HandleSubmit}>
+        <TitleForm>Criar Venda</TitleForm>
+        <InputContainer>
           <label>Descrição</label>
-          <input
+          <InputForm
             placeholder="Ex: E-COMMERCE - 1 ano - para 10 usuários"
             name="description"
           />
-        </div>
+        </InputContainer>
 
-        <div>
+        <InputContainer>
           <label>Id Cliente</label>
-          <input
+          <InputForm
             placeholder="Ex: d4e56668-8cb9-44a7-abe2-ed054dcf3352"
             name="customerId"
           />
-        </div>
+        </InputContainer>
 
-        <div>
+        <InputContainer>
           <label>Id Franquia</label>
-          <input
+          <InputForm
             placeholder="Ex: f88c5ef9-badb-4523-af6e-dbea69aadb3c"
             name="franchiseId"
           />
-        </div>
+        </InputContainer>
 
-        <div>
+        <InputContainer>
           <label>Id Produto</label>
-          <input
+          <InputForm
             placeholder="Ex: 84fd6a07-1d08-4523-87de-6b4bf14a92d5"
             name="productId"
           />
-        </div>
+        </InputContainer>
 
-        <div>
+        <InputContainer>
           <label>Id Usuario</label>
-          <input
+          <InputForm
             placeholder="Ex: b2234007-f0c9-4f9d-a2cd-6d82d4040756"
             name="userId"
           />
-        </div>
+        </InputContainer>
 
-        <button type="submit">Cadastrar</button>
-      </form>
+        <BtnCadastrar type="submit">Cadastrar</BtnCadastrar>
+      </FormStyle>
     </DivSale>
   );
 }

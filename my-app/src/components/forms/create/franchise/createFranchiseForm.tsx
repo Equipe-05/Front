@@ -2,6 +2,7 @@ import React, { ChangeEvent, FormEvent, useState } from "react";
 import { api } from "../../../../utils/api/api";
 import { CreateFranchise } from "../../../../utils/types/requests";
 import { DivFranchise } from "./createFranchiseForm-styles";
+import { BtnCadastrar, FormStyle, InputContainer, InputForm, TitleForm } from "../user/createUserForm-styles";
 
 export function CreateFranchiseForm() {
   async function HandleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -21,30 +22,30 @@ export function CreateFranchiseForm() {
 
   return (
     <DivFranchise>
-      <h2>Adicionar Franquia</h2>
-      <form onSubmit={HandleSubmit}>
-        <div>
+      <FormStyle onSubmit={HandleSubmit}>
+        <TitleForm>Adicionar Franquia</TitleForm>
+        <InputContainer>
           <label>Nome</label>
-          <input placeholder="Ex: Franquia do João" name="nome" />
-        </div>
+          <InputForm placeholder="Ex: Franquia do João" name="nome" />
+        </InputContainer>
 
-        <div>
+        <InputContainer>
           <label>Endereço</label>
-          <input placeholder="Ex: Rua dos Bobos" name="address" />
-        </div>
+          <InputForm placeholder="Ex: Rua dos Bobos" name="address" />
+        </InputContainer>
 
-        <div>
+        <InputContainer>
           <label>Telefone</label>
-          <input placeholder="Ex: 11 98888-8888" name="phone" />
-        </div>
+          <InputForm placeholder="Ex: 11 98888-8888" name="phone" />
+        </InputContainer>
 
-        <div>
+        <InputContainer>
           <label>CNPJ</label>
-          <input placeholder="Ex: 11.111.111/1111-01" name="cnpj" />
-        </div>
+          <InputForm placeholder="Ex: 11.111.111/1111-01" name="cnpj" />
+        </InputContainer>
 
-        <button type="submit">Cadastrar</button>
-      </form>
+        <BtnCadastrar type="submit">Cadastrar</BtnCadastrar>
+      </FormStyle>
     </DivFranchise>
   );
 }

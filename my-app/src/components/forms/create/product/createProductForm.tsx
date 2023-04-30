@@ -2,7 +2,8 @@ import React, { ChangeEvent, FormEvent, useState } from "react";
 import { api } from "../../../../utils/api/api";
 import { optionPlan } from "../../../../utils/types/requests";
 import MenuChoice from "../../../menus/menuChoice";
-import { DivProduct } from "./createProductForm-styles";
+import { DivProduct, Selecttype } from "./createProductForm-styles";
+import { BtnCadastrar, FormStyle, InputContainer, InputForm, TitleForm } from "../user/createUserForm-styles";
 
 export function CreateProductForm() {
   const [selectedOption, setSelectedOption] = useState<string>();
@@ -33,39 +34,40 @@ export function CreateProductForm() {
 
   return (
     <DivProduct>
-      <h2>Adicionar Produto</h2>
-      <form onSubmit={HandleSubmit}>
-        <div>
+      <FormStyle onSubmit={HandleSubmit}>
+        <TitleForm>Adicionar Produto</TitleForm>
+        <InputContainer>
           <label>Nome</label>
-          <input placeholder="Ex: HyperLocalBank" name="nome" />
-        </div>
+          <InputForm placeholder="Ex: HyperLocalBank" name="nome" />
+        </InputContainer>
 
-        <div>
+        <InputContainer>
           <label>Descrição</label>
-          <input
+          <InputForm
             placeholder="Ex: Banco digital para pagamentos"
             name="descricao"
           />
-        </div>
+        </InputContainer>
 
-        <div>
-          <select
+        <InputContainer>
+          <label>Categoria</label>
+          <Selecttype
             name="plano"
             onChange={(e) => setSelectedOption(e.target.value)}
           >
             {optionsPlan.map((opcoes) => (
               <option value={opcoes.value}>{opcoes.label}</option>
             ))}
-          </select>
-        </div>
+          </Selecttype>
+        </InputContainer>
 
-        <div>
+        <InputContainer>
           <label>Score</label>
-          <input placeholder="Ex: 5" name="pontuacao" />
-        </div>
+          <InputForm placeholder="Ex: 5" name="pontuacao" />
+        </InputContainer>
 
-        <button type="submit">Cadastrar</button>
-      </form>
+        <BtnCadastrar type="submit">Cadastrar</BtnCadastrar>
+      </FormStyle>
     </DivProduct>
   );
 }
