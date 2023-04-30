@@ -76,6 +76,16 @@ export const api = {
     }
   },
 
+  getAllUsersFranchise: async () => {
+    try {
+      const query = "?role=FRANCHISEE";
+      const response = await axios.get("/user" + query);
+      return response.data;
+    } catch (error) {
+      alert(error);
+    }
+  },
+
   getUserById: async (id: string) => {
     try {
       const response = await axios.get("/user/" + id);

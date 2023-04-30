@@ -53,7 +53,7 @@ export function TableUserFranchise() {
   const [userFranchises, setUserFranchises] = useState<UserFranchise[]>([]);
 
   async function SelectUserFranchises() {
-    const result = await api.getAllUsers();
+    const result = await api.getAllUsersFranchise();
     setUserFranchises(result);
   }
 
