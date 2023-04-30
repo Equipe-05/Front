@@ -41,7 +41,7 @@ export default function MenuEmployee() {
           >
             <Avatar
               sx={{ height: theme.spacing(12), width: theme.spacing(12) }}
-              src="https://w7.pngwing.com/pngs/502/794/png-transparent-white-arrow-going-up-computer-icons-dashboard-car-symbol-dashboard-icon-miscellaneous-angle-logo.png"
+              src="https://media.licdn.com/dms/image/C4D0BAQGFHTuhFonKaA/company-logo_200_200/0/1657559080278?e=1691020800&v=beta&t=qA1HMrRJ3NL3Xky5iVPuwotaVpD5_aJRnPAyzwsG6oU"
             />
           </Box>
 
@@ -72,6 +72,59 @@ export default function MenuEmployee() {
                   <Edit />
                 </ListItemIcon>
                 <ListItemText secondary="Editar meu Usuario" />
+              </ListItemButton>
+
+              <Typography align="center" variant="h6">
+                Vendas
+              </Typography>
+              <ListItemButton
+                onClick={() => {
+                  navigate("/create-sale");
+                }}
+              >
+                <ListItemIcon>
+                  <HowToReg />
+                </ListItemIcon>
+                <ListItemText secondary="Efetuar Venda" />
+              </ListItemButton>
+
+              <ListItemButton
+                onClick={() => {
+                  navigate("/create-sale");
+                }}
+              >
+                <ListItemIcon>
+                  <HowToReg />
+                </ListItemIcon>
+                <ListItemText secondary="Visualizar Vendas" />
+              </ListItemButton>
+
+              <Typography align="center" variant="h6">
+                Produtos
+              </Typography>
+              <ListItemButton
+                onClick={() => {
+                  navigate("/create-product");
+                }}
+              >
+                <ListItemIcon>
+                  <HowToReg />
+                </ListItemIcon>
+                <ListItemText secondary="Visualizar Produtos" />
+              </ListItemButton>
+
+              <Typography align="center" variant="h6">
+                Clientes
+              </Typography>
+              <ListItemButton
+                onClick={() => {
+                  navigate("/all-customer");
+                }}
+              >
+                <ListItemIcon>
+                  <Edit />
+                </ListItemIcon>
+                <ListItemText secondary="Visualizar Clientes" />
               </ListItemButton>
 
               <ListItemButton
