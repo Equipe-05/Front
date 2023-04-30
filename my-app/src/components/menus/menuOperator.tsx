@@ -1,4 +1,4 @@
-import { Edit, Home, HowToReg, Logout } from "@mui/icons-material";
+import { Edit, Home, HowToReg, Logout, Visibility } from "@mui/icons-material";
 import {
   Avatar,
   Button,
@@ -41,7 +41,7 @@ export default function MenuOperator() {
           >
             <Avatar
               sx={{ height: theme.spacing(12), width: theme.spacing(12) }}
-              src="https://w7.pngwing.com/pngs/https://media.logo_200_200.com/dms/image/C4D0BAQGFHTuhFonKaA/company-logo_200_200/0/1657559080278?e=1691020800&v=beta&t=qA1HMrRJ3NL3Xky5iVPuwotaVpD5_aJRnPAyzwsG6oU/794/png-transparent-white-arrow-going-up-computer-icons-dashboard-car-symbol-dashboard-icon-miscellaneous-angle-logo.png"
+              src="https://media.licdn.com/dms/image/C4D0BAQGFHTuhFonKaA/company-logo_200_200/0/1657559080278?e=1691020800&v=beta&t=qA1HMrRJ3NL3Xky5iVPuwotaVpD5_aJRnPAyzwsG6oU"
             />
           </Box>
 
@@ -108,7 +108,7 @@ export default function MenuOperator() {
                 }}
               >
                 <ListItemIcon>
-                  <HowToReg />
+                  <Visibility />
                 </ListItemIcon>
                 <ListItemText secondary="Visualizar Franquias" />
               </ListItemButton>
@@ -133,7 +133,7 @@ export default function MenuOperator() {
                 }}
               >
                 <ListItemIcon>
-                  <HowToReg />
+                  <Visibility />
                 </ListItemIcon>
                 <ListItemText secondary="Visualizar Produtos" />
               </ListItemButton>
@@ -158,7 +158,7 @@ export default function MenuOperator() {
                 }}
               >
                 <ListItemIcon>
-                  <Edit />
+                  <Visibility />
                 </ListItemIcon>
                 <ListItemText secondary="Visualizar Clientes" />
               </ListItemButton>

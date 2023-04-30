@@ -1,4 +1,11 @@
-import { Edit, Home, HowToReg, Logout } from "@mui/icons-material";
+import {
+  AttachMoney,
+  Edit,
+  Home,
+  HowToReg,
+  Logout,
+  Visibility,
+} from "@mui/icons-material";
 import {
   Avatar,
   Button,
@@ -41,7 +48,7 @@ export default function MenuFranchisee() {
           >
             <Avatar
               sx={{ height: theme.spacing(12), width: theme.spacing(12) }}
-              src="https://w7.pngwing.com/https://media.licdn.com/dms/image/C4D0BAQGFHTuhFonKaA/company-logo_200_200/0/1657559080278?e=1691020800&v=beta&t=qA1HMrRJ3NL3Xky5iVPuwotaVpD5_aJRnPAyzwsG6oU/502/794/png-transparent-white-arrow-going-up-computer-icons-dashboard-car-symbol-dashboard-icon-miscellaneous-angle-logo.png"
+              src="https://media.licdn.com/dms/image/C4D0BAQGFHTuhFonKaA/company-logo_200_200/0/1657559080278?e=1691020800&v=beta&t=qA1HMrRJ3NL3Xky5iVPuwotaVpD5_aJRnPAyzwsG6oU"
             />
           </Box>
 
@@ -97,7 +104,7 @@ export default function MenuFranchisee() {
                 }}
               >
                 <ListItemIcon>
-                  <HowToReg />
+                  <AttachMoney />
                 </ListItemIcon>
                 <ListItemText secondary="Efetuar Venda" />
               </ListItemButton>
@@ -108,7 +115,7 @@ export default function MenuFranchisee() {
                 }}
               >
                 <ListItemIcon>
-                  <HowToReg />
+                  <Visibility />
                 </ListItemIcon>
                 <ListItemText secondary="Visualizar Vendas" />
               </ListItemButton>
@@ -133,7 +140,7 @@ export default function MenuFranchisee() {
                 }}
               >
                 <ListItemIcon>
-                  <Edit />
+                  <Visibility />
                 </ListItemIcon>
                 <ListItemText secondary="Visualizar Clientes" />
               </ListItemButton>
@@ -147,7 +154,7 @@ export default function MenuFranchisee() {
                 }}
               >
                 <ListItemIcon>
-                  <HowToReg />
+                  <Visibility />
                 </ListItemIcon>
                 <ListItemText secondary="Visualizar Produtos" />
               </ListItemButton>

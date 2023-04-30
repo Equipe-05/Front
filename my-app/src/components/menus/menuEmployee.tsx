@@ -1,4 +1,11 @@
-import { Edit, Home, HowToReg, Logout } from "@mui/icons-material";
+import {
+  AttachMoney,
+  Edit,
+  Home,
+  HowToReg,
+  Logout,
+  Visibility,
+} from "@mui/icons-material";
 import {
   Avatar,
   Button,
@@ -83,7 +90,7 @@ export default function MenuEmployee() {
                 }}
               >
                 <ListItemIcon>
-                  <HowToReg />
+                  <AttachMoney />
                 </ListItemIcon>
                 <ListItemText secondary="Efetuar Venda" />
               </ListItemButton>
@@ -94,7 +101,7 @@ export default function MenuEmployee() {
                 }}
               >
                 <ListItemIcon>
-                  <HowToReg />
+                  <Visibility />
                 </ListItemIcon>
                 <ListItemText secondary="Visualizar Vendas" />
               </ListItemButton>
@@ -104,11 +111,11 @@ export default function MenuEmployee() {
               </Typography>
               <ListItemButton
                 onClick={() => {
-                  navigate("/create-product");
+                  navigate("/all-product");
                 }}
               >
                 <ListItemIcon>
-                  <HowToReg />
+                  <Visibility />
                 </ListItemIcon>
                 <ListItemText secondary="Visualizar Produtos" />
               </ListItemButton>
@@ -122,7 +129,7 @@ export default function MenuEmployee() {
                 }}
               >
                 <ListItemIcon>
-                  <Edit />
+                  <Visibility />
                 </ListItemIcon>
                 <ListItemText secondary="Visualizar Clientes" />
               </ListItemButton>
