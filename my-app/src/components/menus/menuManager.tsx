@@ -102,6 +102,20 @@ export default function MenuManager() {
                 <ListItemText secondary="Visualizar Franquias" />
               </ListItemButton>
 
+              <Typography align="center" variant="h6">
+                Produtos
+              </Typography>
+              <ListItemButton
+                onClick={() => {
+                  navigate("/all-product");
+                }}
+              >
+                <ListItemIcon>
+                  <HowToReg />
+                </ListItemIcon>
+                <ListItemText secondary="Visualizar Produtos" />
+              </ListItemButton>
+
               <ListItemButton
                 onClick={() => {
                   navigate("/");

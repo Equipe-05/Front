@@ -47,6 +47,7 @@ const useStyles = makeStyles({
 });
 
 export function TableFranchise() {
+  const userRole = localStorage.getItem("role");
   const navigate = useNavigate();
   const classes = useStyles();
   const [franchises, setFranchises] = useState<UpdateFranchise[]>([]);
@@ -80,7 +81,17 @@ export function TableFranchise() {
               <StyledTableCell align="right">CNPJ</StyledTableCell>
               <StyledTableCell align="right">Telefone</StyledTableCell>
               <StyledTableCell align="right">Endereço</StyledTableCell>
-              <StyledTableCell align="right">Vincular Usuario</StyledTableCell>
+              {(() => {
+                if (userRole == "OPERATOR") {
+                  return (
+                    <div>
+                      <StyledTableCell align="right">
+                        Vincular Usuario
+                      </StyledTableCell>
+                    </div>
+                  );
+                }
+              })()}
             </TableRow>
           </TableHead>
           <TableBody>
@@ -102,16 +113,24 @@ export function TableFranchise() {
                 <StyledTableCell align="right">
                   {franchise.address}
                 </StyledTableCell>
-                <StyledTableCell>
-                  {
-                    <Button
-                      onClick={() => HandleClickUser(franchise.id)}
-                      variant="contained"
-                    >
-                      Vincular Usuario
-                    </Button>
+                {(() => {
+                  if (userRole == "OPERATOR") {
+                    return (
+                      <div>
+                        <StyledTableCell>
+                          {
+                            <Button
+                              onClick={() => HandleClickUser(franchise.id)}
+                              variant="outlined"
+                            >
+                              Vincular Usuario
+                            </Button>
+                          }
+                        </StyledTableCell>
+                      </div>
+                    );
                   }
-                </StyledTableCell>
+                })()}
               </StyledTableRow>
             ))}
           </TableBody>
