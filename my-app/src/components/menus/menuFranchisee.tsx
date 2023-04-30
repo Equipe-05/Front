@@ -108,30 +108,45 @@ export default function MenuFranchisee() {
                 </ListItemIcon>
                 <ListItemText secondary="Efetuar Venda" />
               </ListItemButton>
-
               <ListItemButton
                 onClick={() => {
-                  navigate("/create-sale");
+                  navigate("/all-franchise");
                 }}
               >
                 <ListItemIcon>
                   <Visibility />
                 </ListItemIcon>
-                <ListItemText secondary="Visualizar Vendas" />
+                <ListItemText secondary="Visualizar vendas" />
+              </ListItemButton>
+
+              <Typography align="center" variant="h6">
+                Franquias
+              </Typography>
+
+              <ListItemButton
+                onClick={() => {
+                  navigate("/all-franchise");
+                }}
+              >
+                <ListItemIcon>
+                  <Visibility />
+                </ListItemIcon>
+                <ListItemText secondary="Visualizar Franquias" />
               </ListItemButton>
 
               <Typography align="center" variant="h6">
                 Clientes
               </Typography>
+
               <ListItemButton
                 onClick={() => {
-                  navigate("/create-customer");
+                  navigate("/all-franchise");
                 }}
               >
                 <ListItemIcon>
                   <HowToReg />
                 </ListItemIcon>
-                <ListItemText secondary="Cadastrar Cliente" />
+                <ListItemText secondary="Cadastrar Clientes" />
               </ListItemButton>
 
               <ListItemButton

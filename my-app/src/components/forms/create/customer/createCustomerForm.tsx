@@ -2,9 +2,17 @@ import React, { ChangeEvent, FormEvent, useState } from "react";
 import { api } from "../../../../utils/api/api";
 import { CreateCustomer } from "../../../../utils/types/requests";
 import { DivCustomer } from "./createCustomerForm-styles";
-import { BtnCadastrar, FormStyle, InputContainer, InputForm, TitleForm } from "../user/createUserForm-styles";
+import {
+  BtnCadastrar,
+  FormStyle,
+  InputContainer,
+  InputForm,
+  TitleForm,
+} from "../user/createUserForm-styles";
 
 export function CreateCustomerForm() {
+  const franchiseIdLocal = localStorage.getItem("franchiseId");
+
   async function HandleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
@@ -13,7 +21,7 @@ export function CreateCustomerForm() {
       address: e.currentTarget.address.value,
       phone: e.currentTarget.phone.value,
       cnpj: e.currentTarget.cnpj.value,
-      franchiseId: e.currentTarget.franchiseId.value,
+      franchiseId: franchiseIdLocal,
     };
 
     const productData = await api.postCustomer(newCustomer);
@@ -43,14 +51,6 @@ export function CreateCustomerForm() {
         <InputContainer>
           <label>CNPJ</label>
           <InputForm placeholder="Ex: 11.111.111/1111-01" name="cnpj" />
-        </InputContainer>
-
-        <InputContainer>
-          <label>Id Franquia</label>
-          <InputForm
-            placeholder="Ex: f88c5ef9-badb-4523-af6e-dbea69aadb3c"
-            name="franchiseId"
-          />
         </InputContainer>
 
         <BtnCadastrar type="submit">Cadastrar</BtnCadastrar>
