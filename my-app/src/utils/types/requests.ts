@@ -62,6 +62,14 @@ export type UpdateProduct = {
   score: number;
 };
 
+export type AllProduct = {
+  id: string;
+  name: string;
+  description: string;
+  score: number;
+  plan: string;
+};
+
 export type UpdateProductPlan = {
   id: string;
   plan: string;
@@ -87,6 +95,10 @@ export type UpdateFranchise = {
   address: string;
   phone: number;
   cnpj: string;
+};
+
+export type PatchFranchiseByUserId = {
+  userId: string;
 };
 
 // CUSTOMER

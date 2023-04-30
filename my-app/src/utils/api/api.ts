@@ -244,6 +244,15 @@ export const api = {
     }
   },
 
+  patchFranchiseByUserId: async (userId: String) => {
+    try {
+      const response = await axios.patch("/franchise/" + userId + "/user");
+      return response.data;
+    } catch (error) {
+      alert(error);
+    }
+  },
+
   //CUSTOMER
 
   postCustomer: async (data: CreateCustomer) => {
