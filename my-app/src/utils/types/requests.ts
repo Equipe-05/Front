@@ -104,6 +104,7 @@ export type UpdateFranchise = {
 };
 
 export type PatchFranchiseByUserId = {
+  franchiseId: string | null;
   userId: string;
 };
 

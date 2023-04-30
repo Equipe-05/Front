@@ -15,11 +15,11 @@ import { UpdateFranchisePage } from "./pages/updateFranchise/updateFranchisePage
 import { UpdateProductPage } from "./pages/updateProduct/updateProductPage";
 import { CreateCustomerPage } from "./pages/createCustomer/createCustomerPage";
 import { CreateSalePage } from "./pages/createSale/createSalePage";
-import { TableSale } from "./components/tables/tableSale";
 import { AllFranchisePage } from "./pages/allFranchise/allFranchisePage";
 import { AllCustomerPage } from "./pages/allCustomer/allCustomerPage";
 import { AllProductPage } from "./pages/allProduct/allProductPage";
 import { AllUserFranchisePage } from "./pages/allUserFranchisee/allUserFranchisePage";
+import { AllSaleByFranchisePage } from "./pages/allSaleByFranchise/allSaleByFranchisePage";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -40,12 +40,15 @@ root.render(
         <Route path="/all-franchise" element={<AllFranchisePage />} />
         <Route path="/all-customer" element={<AllCustomerPage />} />
         <Route path="/all-product" element={<AllProductPage />} />
-        <Route path="/user-franchise" element={<AllUserFranchisePage />} />
+        <Route path="/user-franchise/:id" element={<AllUserFranchisePage />} />
         <Route path="/MANAGER/:id" element={<PageManager />} />
         <Route path="/OPERATOR/:id" element={<PageOperator />} />
         <Route path="/FRANCHISEE/:id" element={<PageFranchisee />} />
         <Route path="/EMPLOYEE/:id" element={<PageEmployee />} />
-        <Route path="/sale/franchise/:id" element={<TableSale />} />
+        <Route
+          path="/sale/franchise/:id"
+          element={<AllSaleByFranchisePage />}
+        />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
