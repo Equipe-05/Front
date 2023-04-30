@@ -47,22 +47,15 @@ const useStyles = makeStyles({
 export function TableSale() {
   const classes = useStyles();
   const [Sales, setSales] = useState<Sale[]>([]);
-  const [franchise, setFranchise] = useState<UpdateFranchise>();
   const id = localStorage.getItem("franchiseId");
 
-  async function SelectFranchise(id: string) {
-    const result = await api.getFranchiseById(id);
-    setFranchise(result);
-  }
-
   async function SelectSales(id: string) {
-    let result = await api.getFranchiseSaleById(id);
+    const result = await api.getFranchiseSaleById(id);
     result == null ? "" : setSales(result);
-    // setSales(result ?? "");
+    console.log(result);
   }
 
   useEffect(() => {
-    SelectFranchise(String(id));
     SelectSales(String(id));
   }, []);
 
