@@ -23,6 +23,12 @@ export type UpdateUser = {
   phone: string;
 };
 
+export type UserFranchise = {
+  id: string;
+  name: string;
+  email: string;
+};
+
 export type CreateUser = {
   name: string;
   email: string;
@@ -62,6 +68,14 @@ export type UpdateProduct = {
   score: number;
 };
 
+export type AllProduct = {
+  id: string;
+  name: string;
+  description: string;
+  score: number;
+  plan: string;
+};
+
 export type UpdateProductPlan = {
   id: string;
   plan: string;
@@ -86,5 +100,51 @@ export type UpdateFranchise = {
   name: string;
   address: string;
   phone: number;
-  cnpj: number;
+  cnpj: string;
+};
+
+export type PatchFranchiseByUserId = {
+  userId: string;
+};
+
+// CUSTOMER
+
+export type CreateCustomer = {
+  name: string;
+  cnpj: string;
+  address: string;
+  phone: string;
+  franchiseId: string;
+};
+
+export type UpdateCustomer = {
+  id: string;
+  name: string;
+  address: string;
+  phone: string;
+  cnpj: string;
+};
+
+// SALE
+
+export type CreateSale = {
+  description: string;
+  customerId: string;
+  franchiseId: string;
+  productId: string;
+  userId: string;
+};
+
+export type UpdateSale = {
+  id: string;
+  description: string;
+};
+
+export type Sale = {
+  id: string;
+  description: string;
+  customerId: string;
+  franchiseId: string;
+  productId: string;
+  userId: string;
 };

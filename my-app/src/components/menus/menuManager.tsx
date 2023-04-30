@@ -1,4 +1,4 @@
-import { Home, HowToReg, Logout } from "@mui/icons-material";
+import { Edit, Home, HowToReg, Logout, Visibility } from "@mui/icons-material";
 import {
   Avatar,
   Button,
@@ -41,7 +41,7 @@ export default function MenuManager() {
           >
             <Avatar
               sx={{ height: theme.spacing(12), width: theme.spacing(12) }}
-              src="https://w7.pngwing.com/pngs/502/794/png-transparent-white-arrow-going-up-computer-icons-dashboard-car-symbol-dashboard-icon-miscellaneous-angle-logo.png"
+              src="https://media.licdn.com/dms/image/C4D0BAQGFHTuhFonKaA/company-logo_200_200/0/1657559080278?e=1691020800&v=beta&t=qA1HMrRJ3NL3Xky5iVPuwotaVpD5_aJRnPAyzwsG6oU"
             />
           </Box>
 
@@ -62,6 +62,18 @@ export default function MenuManager() {
                 </ListItemIcon>
                 <ListItemText secondary="Página inicial" />
               </ListItemButton>
+
+              <ListItemButton
+                onClick={() => {
+                  navigate("/update-user");
+                }}
+              >
+                <ListItemIcon>
+                  <Edit />
+                </ListItemIcon>
+                <ListItemText secondary="Editar meu Usuario" />
+              </ListItemButton>
+
               <Typography align="center" variant="h6">
                 Usuarios
               </Typography>
@@ -75,6 +87,35 @@ export default function MenuManager() {
                 </ListItemIcon>
                 <ListItemText secondary="Cadastrar Operador" />
               </ListItemButton>
+
+              <Typography align="center" variant="h6">
+                Franquias
+              </Typography>
+              <ListItemButton
+                onClick={() => {
+                  navigate("/all-franchise");
+                }}
+              >
+                <ListItemIcon>
+                  <Visibility />
+                </ListItemIcon>
+                <ListItemText secondary="Visualizar Franquias" />
+              </ListItemButton>
+
+              <Typography align="center" variant="h6">
+                Produtos
+              </Typography>
+              <ListItemButton
+                onClick={() => {
+                  navigate("/all-product");
+                }}
+              >
+                <ListItemIcon>
+                  <Visibility />
+                </ListItemIcon>
+                <ListItemText secondary="Visualizar Produtos" />
+              </ListItemButton>
+
               <ListItemButton
                 onClick={() => {
                   navigate("/");

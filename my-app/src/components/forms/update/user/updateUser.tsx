@@ -1,14 +1,12 @@
 import React, { FormEvent, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import { api } from "../../../../utils/api/api";
 import { UpdateUser } from "../../../../utils/types/requests";
-import { DivUpdateUser } from "./updateUser-styles";
-import MenuChoice from "../../../menus/menuChoice";
+import { FormStyle, InputContainer, InputForm } from "../../create/user/createUserForm-styles";
+import { BtnDeletar, BtnEditar, ContainerBtnFormEdit } from "./styleEdit";
 
 export function UpdateUserForm() {
   const [user, setUser] = useState<UpdateUser>();
-
-  const { id } = useParams();
+  const id = localStorage.getItem("id");
 
   async function SelectUser() {
     const result = await api.getUserById(String(id));
@@ -41,41 +39,40 @@ export function UpdateUserForm() {
 
   return (
     <div>
-      <MenuChoice />
-      <DivUpdateUser>
+      <FormStyle onSubmit={HandleSubmit}>
         <h2>Editar Usuário</h2>
-        <form onSubmit={HandleSubmit}>
-          <div>
-            <label>Nome</label>
-            <input type="text" name="nome" value={user?.name} required />
-          </div>
+        <InputContainer>
+          <label>Nome</label>
+          <InputForm type="text" name="nome" value={user?.name} required />
+        </InputContainer>
 
-          <div>
-            <label>Email</label>
-            <input type="text" name="email" value={user?.email} required />
-          </div>
+        <InputContainer>
+          <label>Email</label>
+          <InputForm type="text" name="email" value={user?.email} required />
+        </InputContainer>
 
-          <div>
-            <label>CPF</label>
-            <input type="number" name="cpf" value={user?.cpf} required />
-          </div>
+        <InputContainer>
+          <label>CPF</label>
+          <InputForm type="number" name="cpf" value={user?.cpf} required />
+        </InputContainer>
 
-          <div>
-            <label>Endereço</label>
-            <input type="text" name="address" value={user?.address} required />
-          </div>
+        <InputContainer>
+          <label>Endereço</label>
+          <InputForm type="text" name="address" value={user?.address} required />
+        </InputContainer>
 
-          <div>
-            <label>Telefone</label>
-            <input type="text" name="phone" value={user?.phone} required />
-          </div>
+        <InputContainer>
+          <label>Telefone</label>
+          <InputForm type="text" name="phone" value={user?.phone} required />
+        </InputContainer>
 
-          <button type="submit">Editar</button>
-          <button type="button" onClick={HandleDelete}>
-            Deletar
-          </button>
-        </form>
-      </DivUpdateUser>
+        <ContainerBtnFormEdit>
+          <BtnEditar type="submit">EDITAR</BtnEditar>
+          <BtnDeletar type="button" onClick={HandleDelete}>
+            DELETAR
+          </BtnDeletar>
+        </ContainerBtnFormEdit>
+      </FormStyle>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const DivFranchise = styled.div`
+export const DivAllCustomer = styled.div`
   display: flex;
   height: 100%;
   width: 100%;

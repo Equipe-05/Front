@@ -2,13 +2,11 @@ import React, { FormEvent, useEffect, useState } from "react";
 import { UpdateProduct } from "../../../../utils/types/requests";
 import { api } from "../../../../utils/api/api";
 import { useParams } from "react-router-dom";
-import MenuChoice from "../../../menus/menuChoice";
-import { DivUpdateProduct } from "./updateProduct-styles";
 
 export default function UpdateProductForm() {
   const [product, setProduct] = useState<UpdateProduct>();
 
-  const { id } = useParams();
+  const id = localStorage.getItem("id");
 
   async function HandleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -40,41 +38,38 @@ export default function UpdateProductForm() {
 
   return (
     <div>
-      <MenuChoice />
-      <DivUpdateProduct>
-        <h2>Editar Produto</h2>
-        <form onSubmit={HandleSubmit}>
-          <div>
-            <label>Nome</label>
-            <input type="text" name="nome" value={product?.name} required />
-          </div>
+      <h2>Editar Produto</h2>
+      <form onSubmit={HandleSubmit}>
+        <div>
+          <label>Nome</label>
+          <input type="text" name="nome" value={product?.name} required />
+        </div>
 
-          <div>
-            <label>Descrição</label>
-            <input
-              type="text"
-              name="descricao"
-              value={product?.description}
-              required
-            />
-          </div>
+        <div>
+          <label>Descrição</label>
+          <input
+            type="text"
+            name="descricao"
+            value={product?.description}
+            required
+          />
+        </div>
 
-          <div>
-            <label>Score</label>
-            <input
-              type="number"
-              name="pontuacao"
-              value={product?.score}
-              required
-            />
-          </div>
+        <div>
+          <label>Score</label>
+          <input
+            type="number"
+            name="pontuacao"
+            value={product?.score}
+            required
+          />
+        </div>
 
-          <button type="submit">Editar</button>
-          <button type="button" onClick={HandleDelete}>
-            Deletar
-          </button>
-        </form>
-      </DivUpdateProduct>
+        <button type="submit">Editar</button>
+        <button type="button" onClick={HandleDelete}>
+          Deletar
+        </button>
+      </form>
     </div>
   );
 }

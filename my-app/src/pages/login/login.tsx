@@ -7,11 +7,13 @@ import {
   FormLogin,
   ImgLogin,
   InputLogin,
+  TitleContainer,
   TitleInput,
 } from "./login-styled";
 import { api } from "../../utils/api/api";
 import { LoginRequest } from "../../utils/types/requests";
 import { useNavigate } from "react-router-dom";
+import { BtnCadastrar, FormStyle, InputContainer, InputForm, TitleForm } from "../../components/forms/create/user/createUserForm-styles";
 
 export function PageLogin() {
   const navigate = useNavigate();
@@ -45,31 +47,31 @@ export function PageLogin() {
         alt=""
       />
       <ContainerForm>
-        <h2>Login</h2>
-        <FormLogin onSubmit={handleSubmit}>
-          <ContainerInput>
-            <TitleInput>Email</TitleInput>
-            <InputLogin
-              type="text"
-              placeholder="Ex: nome@gmail.com"
-              name="loginEmail"
-              required
-            />
-          </ContainerInput>
+        <div>
+          <FormStyle onSubmit={handleSubmit}>
+          <TitleForm>HYPERLOCAL</TitleForm>
+            <InputContainer>
+              <label>Email</label>
+              <InputForm
+                type="text"
+                placeholder="Ex: nome@gmail.com"
+                name="loginEmail"
+                required
+              />
+            </InputContainer>
 
-          <ContainerInput>
-            <TitleInput>Senha</TitleInput>
-            <InputLogin
-              type="password"
-              placeholder="Ex: senha123"
-              name="loginPassword"
-              required
-            />
-          </ContainerInput>
-          <ContainerInput>
-            <BtnLogin type="submit">Login</BtnLogin>
-          </ContainerInput>
-        </FormLogin>
+            <InputContainer>
+              <label>Senha</label>
+              <InputForm
+                type="password"
+                placeholder="Ex: senha123"
+                name="loginPassword"
+                required
+              />
+            </InputContainer>
+            <BtnCadastrar type="submit">LOGIN</BtnCadastrar>
+          </FormStyle>
+        </div>
       </ContainerForm>
     </ContainerPage>
   );

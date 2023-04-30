@@ -1,12 +1,11 @@
 import React from "react";
 import { FormEvent, useState } from "react";
-import { ContentDiv } from "./createUser-styles";
+import { BtnCadastrar, ContentDiv, FormStyle, InputContainer, InputForm, TitleForm } from "./createUserForm-styles";
 import { useNavigate } from "react-router-dom";
 import { CreateUser } from "../../../../utils/types/requests";
 import { api } from "../../../../utils/api/api";
-import MenuChoice from "../../../menus/menuChoice";
 
-export function PageCreateUser() {
+export function CreateUserForm() {
   const navigate = useNavigate();
   const userRole = localStorage.getItem("role");
   const id = localStorage.getItem("id");
@@ -42,63 +41,74 @@ export function PageCreateUser() {
   }
 
   return (
-    <div>
-      <MenuChoice />
-      <ContentDiv>
-        <h2>{"Cadastro de Usuario"}</h2>
-        <form onSubmit={handleSubmit}>
+    <ContentDiv>
+      <FormStyle onSubmit={handleSubmit}>
+        <TitleForm>{"Cadastro de Usuario"}</TitleForm>
+        <InputContainer>
           <label>Nome do Usuario</label>
-          <input
+          <InputForm
             placeholder="Ex: nome"
             type="text"
             name="userName"
             required
-          ></input>
+          ></InputForm>
+        </InputContainer>
+        <InputContainer>
           <label>Email do usuario</label>
-          <input
+          <InputForm
             placeholder="Ex: nome@gmail.com"
             type="text"
             name="userEmail"
             required
-          ></input>
+          ></InputForm>
+        </InputContainer>
+        <InputContainer>
           <label>Senha</label>
-          <input
+          <InputForm
             placeholder="Ex: senha123"
             type="password"
             name="userPassword"
             required
-          ></input>
+          ></InputForm>
+        </InputContainer>
+        <InputContainer>
           <label>Confirme Senha</label>
-          <input
+          <InputForm
             placeholder="Ex: senha123"
             type="password"
             name="userConfirmPassword"
             required
-          ></input>
+          ></InputForm>
+        </InputContainer>
+        <InputContainer>
           <label>CPF</label>
-          <input
+          <InputForm
             placeholder="Ex: 12345678910"
             type="text"
             name="userCPF"
             required
-          ></input>
+          ></InputForm>
+        </InputContainer>
+        <InputContainer>
           <label>Endereço</label>
-          <input
+          <InputForm
             placeholder="Ex: Rua Endereço"
             type="text"
             name="userAddress"
             required
-          ></input>
+          ></InputForm>
+        </InputContainer>
+        <InputContainer>
           <label>Telefone</label>
-          <input
+          <InputForm
             placeholder="Ex: 11991234567"
             type="text"
             name="userPhone"
             required
-          ></input>
-          <button type="submit">{"Cadastrar"}</button>
-        </form>
-      </ContentDiv>
-    </div>
+          ></InputForm>
+        </InputContainer>
+          <BtnCadastrar type="submit">CADASTRAR</BtnCadastrar>
+      </FormStyle>
+    </ContentDiv>
   );
 }
