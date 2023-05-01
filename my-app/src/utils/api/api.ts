@@ -14,6 +14,7 @@ import {
   UpdateCustomer,
   UpdateSale,
   CreateSale,
+  PatchFranchiseByUserId,
 } from "../types/requests";
 
 axios.defaults.baseURL = "https://back-production-8e9e.up.railway.app";
@@ -70,6 +71,16 @@ export const api = {
   getAllUsers: async () => {
     try {
       const response = await axios.get("/user");
+      return response.data;
+    } catch (error) {
+      alert(error);
+    }
+  },
+
+  getAllUsersFranchise: async () => {
+    try {
+      const query = "?role=FRANCHISEE";
+      const response = await axios.get("/user" + query);
       return response.data;
     } catch (error) {
       alert(error);
@@ -244,9 +255,14 @@ export const api = {
     }
   },
 
-  patchFranchiseByUserId: async (userId: String) => {
+  patchFranchiseByUserId: async (data: PatchFranchiseByUserId) => {
     try {
-      const response = await axios.patch("/franchise/" + userId + "/user");
+      const response = await axios.patch(
+        "/franchise/" + data.franchiseId + "/user",
+        {
+          userId: data.userId,
+        }
+      );
       return response.data;
     } catch (error) {
       alert(error);
@@ -354,8 +370,8 @@ export const api = {
 
   getFranchiseSaleById: async (franchiseId: string) => {
     try {
-      console.log(franchiseId);
       const response = await axios.get("/sale/franchise/" + franchiseId);
+      return response.data;
     } catch (error) {
       alert(error);
     }
@@ -364,6 +380,7 @@ export const api = {
   getCustomerSaleById: async (customerId: string) => {
     try {
       const response = await axios.get("/sale/customer/" + customerId);
+      return response.data;
     } catch (error) {
       alert(error);
     }
@@ -372,6 +389,7 @@ export const api = {
   getUserSaleById: async (userId: string) => {
     try {
       const response = await axios.get("/sale/user/" + userId);
+      return response.data;
     } catch (error) {
       alert(error);
     }
@@ -380,6 +398,7 @@ export const api = {
   getProductSaleById: async (productId: string) => {
     try {
       const response = await axios.get("/sale/product/" + productId);
+      return response.data;
     } catch (error) {
       alert(error);
     }

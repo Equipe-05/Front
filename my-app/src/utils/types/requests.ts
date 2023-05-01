@@ -104,6 +104,7 @@ export type UpdateFranchise = {
 };
 
 export type PatchFranchiseByUserId = {
+  franchiseId: string | null;
   userId: string;
 };
 
@@ -114,7 +115,7 @@ export type CreateCustomer = {
   cnpj: string;
   address: string;
   phone: string;
-  franchiseId: string;
+  franchiseId: string | null;
 };
 
 export type UpdateCustomer = {

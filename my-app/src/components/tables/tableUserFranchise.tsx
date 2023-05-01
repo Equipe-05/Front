@@ -15,7 +15,11 @@ import Paper from "@material-ui/core/Paper";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
 import { DivTableFranchise } from "./tableFranchiseStyle";
-import { UpdateFranchise, UserFranchise } from "../../utils/types/requests";
+import {
+  PatchFranchiseByUserId,
+  UpdateFranchise,
+  UserFranchise,
+} from "../../utils/types/requests";
 import { api } from "../../utils/api/api";
 
 const StyledTableCell = withStyles((theme: Theme) =>
@@ -53,12 +57,19 @@ export function TableUserFranchise() {
   const [userFranchises, setUserFranchises] = useState<UserFranchise[]>([]);
 
   async function SelectUserFranchises() {
-    const result = await api.getAllUsers();
+    const result = await api.getAllUsersFranchise();
     setUserFranchises(result);
   }
 
   async function HandleClick(id: string) {
-    console.log("vincular");
+    const franchiseIdLocal = localStorage.getItem("franchiseId");
+
+    const franchiseByUserId: PatchFranchiseByUserId = {
+      userId: id,
+      franchiseId: franchiseIdLocal,
+    };
+
+    const resultByUser = await api.patchFranchiseByUserId(franchiseByUserId);
   }
 
   useEffect(() => {

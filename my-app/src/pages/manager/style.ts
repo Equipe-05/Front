@@ -1,10 +1,14 @@
 import styled from "styled-components";
 
-export const DivFranchiseUser = styled.div`
+export const Manager = styled.div`
   display: flex;
-  height: 100%;
+  min-height: 100vh;
   width: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-`;
+  background-color: #000036;
+`
+export const ImgStart = styled.img `
+    max-height: 100vh;
+`

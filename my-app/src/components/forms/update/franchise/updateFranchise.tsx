@@ -1,6 +1,8 @@
 import React, { FormEvent, useEffect, useState } from "react";
 import { UpdateFranchise } from "../../../../utils/types/requests";
 import { api } from "../../../../utils/api/api";
+import { FormStyle, InputContainer, InputForm, TitleForm } from "../../create/user/createUserForm-styles";
+import { BtnDeletar, BtnEditar } from "../user/styleEdit";
 
 export function UpdateFranchiseForm() {
   const [franchise, setFranchise] = useState<UpdateFranchise>();
@@ -37,38 +39,38 @@ export function UpdateFranchiseForm() {
 
   return (
     <div>
-      <h2>Editar Franquia</h2>
-      <form>
-        <div>
+      <FormStyle>
+        <TitleForm>Editar Franquia</TitleForm>
+        <InputContainer>
           <label>Nome</label>
-          <input type="text" name="nome" value={franchise?.name} required />
-        </div>
+          <InputForm type="text" name="nome" value={franchise?.name} required />
+        </InputContainer>
 
-        <div>
+        <InputContainer>
           <label>Endereço</label>
-          <input
+          <InputForm
             type="text"
             name="address"
             value={franchise?.address}
             required
           />
-        </div>
+        </InputContainer>
 
-        <div>
+        <InputContainer>
           <label>Telefone</label>
-          <input type="text" name="phone" value={franchise?.phone} required />
-        </div>
+          <InputForm type="text" name="phone" value={franchise?.phone} required />
+        </InputContainer>
 
-        <div>
+        <InputContainer>
           <label>CNPJ</label>
-          <input type="text" name="cnpj" value={franchise?.cnpj} required />
-        </div>
+          <InputForm type="text" name="cnpj" value={franchise?.cnpj} required />
+        </InputContainer>
 
-        <button type="submit">Editar</button>
-        <button type="button" onClick={HandleDelete}>
+        <BtnEditar type="submit">Editar</BtnEditar>
+        <BtnDeletar type="button" onClick={HandleDelete}>
           Deletar
-        </button>
-      </form>
+        </BtnDeletar>
+      </FormStyle>
     </div>
   );
 }

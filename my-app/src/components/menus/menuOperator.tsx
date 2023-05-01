@@ -141,16 +141,6 @@ export default function MenuOperator() {
               <Typography align="center" variant="h6">
                 Clientes
               </Typography>
-              <ListItemButton
-                onClick={() => {
-                  navigate("/create-customer");
-                }}
-              >
-                <ListItemIcon>
-                  <HowToReg />
-                </ListItemIcon>
-                <ListItemText secondary="Cadastrar Cliente" />
-              </ListItemButton>
 
               <ListItemButton
                 onClick={() => {
