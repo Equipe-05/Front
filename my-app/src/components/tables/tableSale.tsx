@@ -60,16 +60,16 @@ export function TableSale() {
   }, []);
 
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} style={{width: "auto"}}>
       <DivTable>
         <Table className={classes.table} aria-label="customized table">
           <TableHead>
             <TableRow>
-              <StyledTableCell>Descrição</StyledTableCell>
-              <StyledTableCell align="right">ID Cliente</StyledTableCell>
-              <StyledTableCell align="right">ID Franquia</StyledTableCell>
-              <StyledTableCell align="right">ID Produto</StyledTableCell>
-              <StyledTableCell align="right">ID Usuário</StyledTableCell>
+              <StyledTableCell style={{backgroundColor:"#E36C0B"}}>Descrição</StyledTableCell>
+              <StyledTableCell style={{backgroundColor:"#E36C0B"}}align="right">ID Cliente</StyledTableCell>
+              <StyledTableCell style={{backgroundColor:"#E36C0B"}}align="right">ID Franquia</StyledTableCell>
+              <StyledTableCell style={{backgroundColor:"#E36C0B"}}align="right">ID Produto</StyledTableCell>
+              <StyledTableCell style={{backgroundColor:"#E36C0B"}}align="right">ID Usuário</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>

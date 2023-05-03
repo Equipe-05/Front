@@ -4,7 +4,7 @@ import { DivAllSaleByFranchise } from "./allSaleByFranchiseStyles";
 
 export function AllSaleByFranchisePage() {
   return (
-    <div>
+    <div style={{ display: "flex", width: "100vw" }}>
       <MenuChoice />
       <DivAllSaleByFranchise>
         <TableSale />

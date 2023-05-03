@@ -403,4 +403,15 @@ export const api = {
       alert(error);
     }
   },
+
+  // CALLED
+
+  postCalled: async (data: any) => {
+    try {
+      const response = await axios.post("/called", data)
+      return response.data;
+    } catch (error) {
+      alert(error)
+    }
+  }
 };

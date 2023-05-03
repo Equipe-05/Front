@@ -4,7 +4,7 @@ import { DivAllUserFranchise } from "./allUserFranchiseStyles";
 
 export function AllUserFranchisePage() {
   return (
-    <div>
+    <div style={{ display: "flex", width: "100vw" }}>
       <MenuChoice />
       <DivAllUserFranchise>
         <TableUserFranchise />

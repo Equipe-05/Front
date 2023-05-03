@@ -77,23 +77,23 @@ export function TableFranchise() {
   }, []);
 
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} style={{width: "auto"}}>
       <DivTableFranchise>
         <Table className={classes.table} aria-label="customized table">
-          <TableHead>
+          <TableHead style={{width: "100%"}}>
             <TableRow>
-              <StyledTableCell>Franquia</StyledTableCell>
-              <StyledTableCell align="right">CNPJ</StyledTableCell>
-              <StyledTableCell align="right">Telefone</StyledTableCell>
-              <StyledTableCell align="right">Endereço</StyledTableCell>
+              <StyledTableCell style={{backgroundColor:"#E36C0B"}}>Franquia</StyledTableCell>
+              <StyledTableCell style={{backgroundColor:"#E36C0B"}}align="right">CNPJ</StyledTableCell>
+              <StyledTableCell style={{backgroundColor:"#E36C0B"}}align="right">Telefone</StyledTableCell>
+              <StyledTableCell style={{backgroundColor:"#E36C0B"}}align="right">Endereço</StyledTableCell>
               {(() => {
                 if (userRole == "OPERATOR") {
                   return (
                     <div>
-                      <StyledTableCell align="right">
+                      <StyledTableCell style={{backgroundColor:"#E36C0B"}}align="right">
                         Vincular Usuario
                       </StyledTableCell>
-                      <StyledTableCell align="right">Vendas</StyledTableCell>
+                      <StyledTableCell style={{backgroundColor:"#E36C0B"}}align="right">Vendas</StyledTableCell>
                     </div>
                   );
                 }

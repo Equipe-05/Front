@@ -77,14 +77,14 @@ export function TableUserFranchise() {
   }, []);
 
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} style={{width: "auto"}}>
       <DivTableFranchise>
         <Table className={classes.table} aria-label="customized table">
           <TableHead>
             <TableRow>
-              <StyledTableCell>Nome</StyledTableCell>
-              <StyledTableCell align="right">Email</StyledTableCell>
-              <StyledTableCell align="right">Vincular</StyledTableCell>
+              <StyledTableCell style={{backgroundColor:"#E36C0B"}}>Nome</StyledTableCell>
+              <StyledTableCell style={{backgroundColor:"#E36C0B"}}align="right">Email</StyledTableCell>
+              <StyledTableCell style={{backgroundColor:"#E36C0B"}}align="right">Vincular</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>

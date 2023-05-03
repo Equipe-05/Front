@@ -4,7 +4,7 @@ import { DivAllProduct } from "./allProductStyles";
 
 export function AllProductPage() {
   return (
-    <div>
+    <div style={{ display: "flex", width: "100vw" }}>
       <MenuChoice />
       <DivAllProduct>
         <TableProduct />
