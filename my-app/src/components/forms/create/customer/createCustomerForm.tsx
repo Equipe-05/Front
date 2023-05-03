@@ -25,8 +25,6 @@ export function CreateCustomerForm() {
     };
 
     const productData = await api.postCustomer(newCustomer);
-
-    console.log(newCustomer);
   }
 
   return (
