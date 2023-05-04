@@ -82,23 +82,73 @@ export function TableFranchise() {
         <Table className={classes.table} aria-label="customized table">
           <TableHead style={{ width: "100%" }}>
             <TableRow>
-              <StyledTableCell style={{ backgroundColor: "#E36C0B" }}>Franquia</StyledTableCell>
-              <StyledTableCell style={{ backgroundColor: "#E36C0B" }} align="right">CNPJ</StyledTableCell>
-              <StyledTableCell style={{ backgroundColor: "#E36C0B" }} align="right">Telefone</StyledTableCell>
-              <StyledTableCell style={{ backgroundColor: "#E36C0B" }} align="right">Endereço</StyledTableCell>
-              {userRole == "OPERATOR" &&
+              <StyledTableCell style={{ backgroundColor: "#E36C0B" }}>
+                Franquia
+              </StyledTableCell>
+              <StyledTableCell
+                style={{ backgroundColor: "#E36C0B" }}
+                align="right"
+              >
+                CNPJ
+              </StyledTableCell>
+              <StyledTableCell
+                style={{ backgroundColor: "#E36C0B" }}
+                align="right"
+              >
+                Telefone
+              </StyledTableCell>
+              <StyledTableCell
+                style={{ backgroundColor: "#E36C0B" }}
+                align="right"
+              >
+                Endereço
+              </StyledTableCell>
+              {userRole == "OPERATOR" && (
                 <>
-                  <StyledTableCell style={{ backgroundColor: "#E36C0B" }} align="right">Vincular Usuario</StyledTableCell>
-                  <StyledTableCell style={{ backgroundColor: "#E36C0B" }} align="right">Clientes</StyledTableCell>
-                  <StyledTableCell style={{ backgroundColor: "#E36C0B" }} align="right">Vendas</StyledTableCell>
-                </>}
-              {userRole == "FRANCHISE" &&
+                  <StyledTableCell
+                    style={{ backgroundColor: "#E36C0B" }}
+                    align="right"
+                  >
+                    Vincular Usuario
+                  </StyledTableCell>
+                  <StyledTableCell
+                    style={{ backgroundColor: "#E36C0B" }}
+                    align="right"
+                  >
+                    Clientes
+                  </StyledTableCell>
+                  <StyledTableCell
+                    style={{ backgroundColor: "#E36C0B" }}
+                    align="right"
+                  >
+                    Vendas
+                  </StyledTableCell>
+                </>
+              )}
+              {userRole == "FRANCHISEE" && (
                 <>
-                  <StyledTableCell style={{ backgroundColor: "#E36C0B" }} align="right">Cadastrar Cliente</StyledTableCell>
-                  <StyledTableCell style={{ backgroundColor: "#E36C0B" }} align="right">Vendas</StyledTableCell>
-                </>}
-              {userRole == "MANAGER" &&
-                <StyledTableCell style={{ backgroundColor: "#E36C0B" }} align="right">Vendas</StyledTableCell>}
+                  <StyledTableCell
+                    style={{ backgroundColor: "#E36C0B" }}
+                    align="right"
+                  >
+                    Cadastrar Cliente
+                  </StyledTableCell>
+                  <StyledTableCell
+                    style={{ backgroundColor: "#E36C0B" }}
+                    align="right"
+                  >
+                    Vendas
+                  </StyledTableCell>
+                </>
+              )}
+              {userRole == "MANAGER" && (
+                <StyledTableCell
+                  style={{ backgroundColor: "#E36C0B" }}
+                  align="right"
+                >
+                  Vendas
+                </StyledTableCell>
+              )}
             </TableRow>
           </TableHead>
           <TableBody>
@@ -116,7 +166,7 @@ export function TableFranchise() {
                 <StyledTableCell align="right">
                   {franchise.address}
                 </StyledTableCell>
-                {userRole == "OPERATOR" &&
+                {userRole == "OPERATOR" && (
                   <>
                     <StyledTableCell>
                       {
@@ -148,8 +198,9 @@ export function TableFranchise() {
                         </Button>
                       }
                     </StyledTableCell>
-                  </>}
-                {userRole == "FRANCHISE" &&
+                  </>
+                )}
+                {userRole == "FRANCHISEE" && (
                   <>
                     <StyledTableCell>
                       {
@@ -171,25 +222,27 @@ export function TableFranchise() {
                         </Button>
                       }
                     </StyledTableCell>
-                  </>}
-                {userRole == "MANAGER" &&
+                  </>
+                )}
+                {userRole == "MANAGER" && (
                   <>
                     <StyledTableCell>
-                          {
-                            <Button
-                              onClick={() => HandleClick(franchise.id)}
-                              variant="outlined"
-                            >
-                              Vendas
-                            </Button>
-                          }
-                        </StyledTableCell>
-                  </>}
+                      {
+                        <Button
+                          onClick={() => HandleClick(franchise.id)}
+                          variant="outlined"
+                        >
+                          Vendas
+                        </Button>
+                      }
+                    </StyledTableCell>
+                  </>
+                )}
               </StyledTableRow>
             ))}
           </TableBody>
         </Table>
       </DivTableFranchise>
-    </TableContainer >
+    </TableContainer>
   );
 }
