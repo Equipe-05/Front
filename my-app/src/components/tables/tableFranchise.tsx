@@ -77,48 +77,28 @@ export function TableFranchise() {
   }, []);
 
   return (
-    <TableContainer component={Paper} style={{width: "auto"}}>
-      <DivTableFranchise>
+    <TableContainer component={Paper} style={{ width: "auto" }}>
+      <DivTableFranchise style={{ margin: 0, width: "100%" }}>
         <Table className={classes.table} aria-label="customized table">
-          <TableHead style={{width: "100%"}}>
+          <TableHead style={{ width: "100%" }}>
             <TableRow>
-              <StyledTableCell style={{backgroundColor:"#E36C0B"}}>Franquia</StyledTableCell>
-              <StyledTableCell style={{backgroundColor:"#E36C0B"}}align="right">CNPJ</StyledTableCell>
-              <StyledTableCell style={{backgroundColor:"#E36C0B"}}align="right">Telefone</StyledTableCell>
-              <StyledTableCell style={{backgroundColor:"#E36C0B"}}align="right">Endereço</StyledTableCell>
-              {(() => {
-                if (userRole == "OPERATOR") {
-                  return (
-                    <div>
-                      <StyledTableCell style={{backgroundColor:"#E36C0B"}}align="right">
-                        Vincular Usuario
-                      </StyledTableCell>
-                      <StyledTableCell style={{backgroundColor:"#E36C0B"}}align="right">Vendas</StyledTableCell>
-                    </div>
-                  );
-                }
-              })()}
-              {(() => {
-                if (userRole == "FRANCHISEE") {
-                  return (
-                    <div>
-                      <StyledTableCell align="right">
-                        Cadastrar Cliente
-                      </StyledTableCell>
-                      <StyledTableCell align="right">Vendas</StyledTableCell>
-                    </div>
-                  );
-                }
-              })()}
-              {(() => {
-                if (userRole == "MANAGER") {
-                  return (
-                    <div>
-                      <StyledTableCell align="right">Vendas</StyledTableCell>
-                    </div>
-                  );
-                }
-              })()}
+              <StyledTableCell style={{ backgroundColor: "#E36C0B" }}>Franquia</StyledTableCell>
+              <StyledTableCell style={{ backgroundColor: "#E36C0B" }} align="right">CNPJ</StyledTableCell>
+              <StyledTableCell style={{ backgroundColor: "#E36C0B" }} align="right">Telefone</StyledTableCell>
+              <StyledTableCell style={{ backgroundColor: "#E36C0B" }} align="right">Endereço</StyledTableCell>
+              {userRole == "OPERATOR" &&
+                <>
+                  <StyledTableCell style={{ backgroundColor: "#E36C0B" }} align="right">Vincular Usuario</StyledTableCell>
+                  <StyledTableCell style={{ backgroundColor: "#E36C0B" }} align="right">Clientes</StyledTableCell>
+                  <StyledTableCell style={{ backgroundColor: "#E36C0B" }} align="right">Vendas</StyledTableCell>
+                </>}
+              {userRole == "FRANCHISE" &&
+                <>
+                  <StyledTableCell style={{ backgroundColor: "#E36C0B" }} align="right">Cadastrar Cliente</StyledTableCell>
+                  <StyledTableCell style={{ backgroundColor: "#E36C0B" }} align="right">Vendas</StyledTableCell>
+                </>}
+              {userRole == "MANAGER" &&
+                <StyledTableCell style={{ backgroundColor: "#E36C0B" }} align="right">Vendas</StyledTableCell>}
             </TableRow>
           </TableHead>
           <TableBody>
@@ -136,77 +116,65 @@ export function TableFranchise() {
                 <StyledTableCell align="right">
                   {franchise.address}
                 </StyledTableCell>
-                {(() => {
-                  if (userRole == "OPERATOR") {
-                    return (
-                      <div>
-                        <StyledTableCell>
-                          {
-                            <Button
-                              onClick={() => HandleClickUser(franchise.id)}
-                              variant="outlined"
-                            >
-                              Vincular Usuario
-                            </Button>
-                          }
-                        </StyledTableCell>
-                        <StyledTableCell>
-                          {
-                            <Button
-                              onClick={() => HandleClickCustomer(franchise.id)}
-                              variant="outlined"
-                            >
-                              Cadastrar Cliente
-                            </Button>
-                          }
-                        </StyledTableCell>
-                        <StyledTableCell>
-                          {
-                            <Button
-                              onClick={() => HandleClick(franchise.id)}
-                              variant="outlined"
-                            >
-                              Vendas
-                            </Button>
-                          }
-                        </StyledTableCell>
-                      </div>
-                    );
-                  }
-                })()}
-                {(() => {
-                  if (userRole == "FRANCHISEE") {
-                    return (
-                      <div>
-                        <StyledTableCell>
-                          {
-                            <Button
-                              onClick={() => HandleClickCustomer(franchise.id)}
-                              variant="outlined"
-                            >
-                              Cadastrar Cliente
-                            </Button>
-                          }
-                        </StyledTableCell>
-                        <StyledTableCell>
-                          {
-                            <Button
-                              onClick={() => HandleClick(franchise.id)}
-                              variant="outlined"
-                            >
-                              Vendas
-                            </Button>
-                          }
-                        </StyledTableCell>
-                      </div>
-                    );
-                  }
-                })()}
-                {(() => {
-                  if (userRole == "MANAGER") {
-                    return (
-                      <div>
-                        <StyledTableCell>
+                {userRole == "OPERATOR" &&
+                  <>
+                    <StyledTableCell>
+                      {
+                        <Button
+                          onClick={() => HandleClickUser(franchise.id)}
+                          variant="outlined"
+                        >
+                          Vincular Usuario
+                        </Button>
+                      }
+                    </StyledTableCell>
+                    <StyledTableCell>
+                      {
+                        <Button
+                          onClick={() => HandleClickCustomer(franchise.id)}
+                          variant="outlined"
+                        >
+                          Cadastrar Cliente
+                        </Button>
+                      }
+                    </StyledTableCell>
+                    <StyledTableCell>
+                      {
+                        <Button
+                          onClick={() => HandleClick(franchise.id)}
+                          variant="outlined"
+                        >
+                          Vendas
+                        </Button>
+                      }
+                    </StyledTableCell>
+                  </>}
+                {userRole == "FRANCHISE" &&
+                  <>
+                    <StyledTableCell>
+                      {
+                        <Button
+                          onClick={() => HandleClickCustomer(franchise.id)}
+                          variant="outlined"
+                        >
+                          Cadastrar Cliente
+                        </Button>
+                      }
+                    </StyledTableCell>
+                    <StyledTableCell>
+                      {
+                        <Button
+                          onClick={() => HandleClick(franchise.id)}
+                          variant="outlined"
+                        >
+                          Vendas
+                        </Button>
+                      }
+                    </StyledTableCell>
+                  </>}
+                {userRole == "MANAGER" &&
+                  <>
+                    <StyledTableCell>
                           {
                             <Button
                               onClick={() => HandleClick(franchise.id)}
@@ -216,15 +184,12 @@ export function TableFranchise() {
                             </Button>
                           }
                         </StyledTableCell>
-                      </div>
-                    );
-                  }
-                })()}
+                  </>}
               </StyledTableRow>
             ))}
           </TableBody>
         </Table>
       </DivTableFranchise>
-    </TableContainer>
+    </TableContainer >
   );
 }
