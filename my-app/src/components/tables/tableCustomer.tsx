@@ -59,7 +59,7 @@ export function TableCustomer() {
 
   return (
     <TableContainer component={Paper} style={{width: "auto"}}>
-      <DivTable>
+      <DivTable style={{margin: 0, width: "100%"}}>
         <Table className={classes.table} aria-label="customized table">
           <TableHead>
             <TableRow>

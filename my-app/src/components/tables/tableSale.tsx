@@ -51,8 +51,9 @@ export function TableSale() {
 
   async function SelectSales(id: string) {
     const result = await api.getFranchiseSaleById(id);
-    result == null ? "" : setSales(result);
-    console.log(result);
+    if (result) {
+      setSales(result)
+    }
   }
 
   useEffect(() => {
@@ -61,7 +62,7 @@ export function TableSale() {
 
   return (
     <TableContainer component={Paper} style={{width: "auto"}}>
-      <DivTable>
+      <DivTable style={{margin: 0, width: "100%"}}>
         <Table className={classes.table} aria-label="customized table">
           <TableHead>
             <TableRow>
