@@ -97,8 +97,8 @@ function DashboardCard11() {
       {
         label: "Outros",
         data: [72],
-        backgroundColor: "#e2e8f0",
-        hoverBackgroundColor: "#cbd5e1",
+        backgroundColor: "#94a3b8",
+        hoverBackgroundColor: "#64748b",
         barPercentage: 1,
         categoryPercentage: 1,
       },
