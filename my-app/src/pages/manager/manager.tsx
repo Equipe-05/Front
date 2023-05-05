@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import DashboardCard09 from "../../components/dashboards/DashBoardCard09";
 import DashboardCard01 from "../../components/dashboards/DashboardCard01";
 import DashboardCard02 from "../../components/dashboards/DashboardCard02";
@@ -10,7 +9,17 @@ import DashboardCard07 from "../../components/dashboards/DashboardCard07";
 import DashboardCard10 from "../../components/dashboards/DashboardCard10";
 import DashboardCard11 from "../../components/dashboards/DashboardCard11";
 import MenuChoice from "../../components/menus/menuChoice";
-import { ImgStart, Manager } from "./style";
+import {
+  DashboardContainer,
+  FormGraph,
+  FullGraph,
+  LargeGraph,
+  Manager,
+  OneThirdGraph,
+  RowWrapper,
+  SmallGraph,
+  TwoThirdsGraph,
+} from "./style";
 
 export function PageManager() {
   return (
@@ -67,55 +76,3 @@ export function PageManager() {
     </div>
   );
 }
-
-const DashboardContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-top: 10px;
-  align-items: center;
-  width: 1240px;
-  height: 2200px;
-`;
-
-const RowWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin: 10px 0;
-  width: 100%;
-`;
-
-const SmallGraph = styled.div`
-  width: 100%;
-  height: 300px;
-  margin: 0 10px;
-`;
-
-const LargeGraph = styled.div`
-  width: 100%;
-  height: 400px;
-  margin: 0 10px;
-`;
-
-const TwoThirdsGraph = styled.div`
-  width: 66.66%;
-  height: 410px;
-  margin: 0 10px;
-`;
-
-const FullGraph = styled.div`
-  width: 100%;
-  margin: 0 10px;
-  height: 520px;
-`;
-
-const OneThirdGraph = styled.div`
-  width: 33%;
-  height: 410px;
-  margin: 0 10px;
-  margin-right: 13px;
-`;
-
-const FormGraph = styled(LargeGraph)`
-  height: 452px;
-`;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Manager = styled.div`
+export const Operator = styled.div`
   display: flex;
   min-height: 100vh;
   width: 100%;
@@ -21,7 +21,8 @@ export const DashboardContainer = styled.div`
   margin-top: 10px;
   align-items: center;
   width: 1240px;
-  height: 2130px;
+  height: 1650px;
+  padding-bottom: 3.5rem;
 `;
 
 export const RowWrapper = styled.div`
@@ -33,35 +34,22 @@ export const RowWrapper = styled.div`
 
 export const SmallGraph = styled.div`
   width: 100%;
-  height: 300px;
+  height: 20%;
   margin: 0 10px;
 `;
 
 export const LargeGraph = styled.div`
   width: 100%;
-  height: 400px;
+  height: 20%;
   margin: 0 10px;
-`;
-
-export const TwoThirdsGraph = styled.div`
-  width: 66.66%;
-  height: 410px;
-  margin: 0 10px;
-`;
-
-export const OneThirdGraph = styled.div`
-  width: 33%;
-  height: 410px;
-  margin: 0 10px;
-  margin-right: 13px;
-`;
-
-export const FormGraph = styled(LargeGraph)`
-  height: 452px;
 `;
 
 export const FullGraph = styled.div`
   width: 100%;
   margin: 0 10px;
-  height: 470px;
+  height: 20%;
+`;
+
+export const FormGraph = styled(LargeGraph)`
+  height: 20%;
 `;

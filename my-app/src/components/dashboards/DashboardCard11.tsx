@@ -23,20 +23,23 @@ const ChartHeader = styled.header`
   padding-right: 1.25rem;
   border-bottom: 1px solid #f1f5f9;
 `;
+
 const ChartH2 = styled.h2`
   font-weight: 600;
   color: #1e293b;
 `;
+
 const ChartPadding = styled.div`
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
+  padding-top: 0.5rem;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 `;
+
 const ChartFlexItemContainer = styled.div`
   display: flex;
   align-items: flex-start;
 `;
+
 const ChartCounter = styled.div`
   margin-right: 0.5rem;
   font-size: 1.875rem;
@@ -44,6 +47,7 @@ const ChartCounter = styled.div`
   font-weight: 700;
   color: #1e293b;
 `;
+
 const ChartTag = styled.div`
   padding-left: 0.375rem;
   padding-right: 0.375rem;
@@ -54,6 +58,7 @@ const ChartTag = styled.div`
   font-weight: 600;
   border-radius: 9999px;
 `;
+
 export const ChartContainer = styled.div`
   flex-grow: 1;
 `;
@@ -97,8 +102,8 @@ function DashboardCard11() {
       {
         label: "Outros",
         data: [72],
-        backgroundColor: "#e2e8f0",
-        hoverBackgroundColor: "#cbd5e1",
+        backgroundColor: "#94a3b8",
+        hoverBackgroundColor: "#64748b",
         barPercentage: 1,
         categoryPercentage: 1,
       },
