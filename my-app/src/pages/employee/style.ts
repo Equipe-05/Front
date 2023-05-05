@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Manager = styled.div`
+export const Employee = styled.div`
   display: flex;
   min-height: 100vh;
   width: 100%;
@@ -12,4 +12,48 @@ export const Manager = styled.div`
 
 export const ImgStart = styled.img`
   max-height: 100vh;
+`;
+
+export const DashboardContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 10px;
+  align-items: center;
+  width: 1240px;
+  height: 1180px;
+  padding-bottom: 3rem;
+`;
+
+export const RowWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0;
+  width: 100%;
+`;
+
+export const SmallGraph = styled.div`
+  width: 100%;
+  height: 20%;
+  margin: 0 10px;
+`;
+
+export const LargeGraph = styled.div`
+  width: 50%;
+  height: 20%;
+  margin: 0 10px;
+`;
+
+export const FormGraph = styled(LargeGraph)`
+  height: 100%;
+  width: 48.5%;
+
+  &.first {
+    margin-right: 13px;
+    overflow: hidden;
+  }
+
+  &.second {
+    width: 48.9%;
+  }
 `;
