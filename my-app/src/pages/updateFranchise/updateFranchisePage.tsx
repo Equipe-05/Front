@@ -4,7 +4,7 @@ import { DivUpdateFranchise } from "./updateFranchiseStyle";
 
 export function UpdateFranchisePage() {
   return (
-    <div>
+    <div style={{ display: "flex", width: "100vw" }}>
       <MenuChoice />
       <DivUpdateFranchise>
         <UpdateFranchiseForm />

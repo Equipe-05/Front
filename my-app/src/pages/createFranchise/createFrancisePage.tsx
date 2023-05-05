@@ -4,7 +4,7 @@ import { DivCreateFranchise } from "./createFranchiseStyle";
 
 export function CreateFranchisePage() {
   return (
-    <div>
+    <div style={{ display: "flex", width: "100vw" }}>
       <MenuChoice />
       <DivCreateFranchise>
         <CreateFranchiseForm />

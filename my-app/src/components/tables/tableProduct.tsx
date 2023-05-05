@@ -63,15 +63,15 @@ export function TableProduct() {
   }, []);
 
   return (
-    <TableContainer component={Paper}>
-      <DivTable>
-        <Table className={classes.table} aria-label="customized table">
+    <TableContainer component={Paper} style={{width: "auto"}}>
+      <DivTable style={{margin: 0, width: "100%"}}>
+        <Table style={{width: "auto"}} className={classes.table} aria-label="customized table">
           <TableHead>
             <TableRow>
-              <StyledTableCell>Produto</StyledTableCell>
-              <StyledTableCell align="right">Descrição</StyledTableCell>
-              <StyledTableCell align="right">Plano</StyledTableCell>
-              <StyledTableCell align="right">Score</StyledTableCell>
+              <StyledTableCell style={{backgroundColor:"#E36C0B"}}>Produto</StyledTableCell>
+              <StyledTableCell style={{backgroundColor:"#E36C0B"}}align="right">Descrição</StyledTableCell>
+              <StyledTableCell style={{backgroundColor:"#E36C0B"}}align="right">Plano</StyledTableCell>
+              <StyledTableCell style={{backgroundColor:"#E36C0B"}}align="right">Score</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>

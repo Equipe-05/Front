@@ -58,15 +58,15 @@ export function TableCustomer() {
   }, []);
 
   return (
-    <TableContainer component={Paper}>
-      <DivTable>
+    <TableContainer component={Paper} style={{width: "auto"}}>
+      <DivTable style={{margin: 0, width: "100%"}}>
         <Table className={classes.table} aria-label="customized table">
           <TableHead>
             <TableRow>
-              <StyledTableCell>Cliente</StyledTableCell>
-              <StyledTableCell align="right">CNPJ</StyledTableCell>
-              <StyledTableCell align="right">Telefone</StyledTableCell>
-              <StyledTableCell align="right">Endereço</StyledTableCell>
+              <StyledTableCell style={{backgroundColor:"#E36C0B"}}>Cliente</StyledTableCell>
+              <StyledTableCell style={{backgroundColor:"#E36C0B"}}align="right">CNPJ</StyledTableCell>
+              <StyledTableCell style={{backgroundColor:"#E36C0B"}}align="right">Telefone</StyledTableCell>
+              <StyledTableCell style={{backgroundColor:"#E36C0B"}}align="right">Endereço</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>

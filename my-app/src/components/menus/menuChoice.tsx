@@ -7,7 +7,7 @@ export default function MenuChoice() {
   const userRole = localStorage.getItem("role");
 
   return (
-    <div>
+    <div style={{width: "13vw"}}>
       {(() => {
         if (userRole == "MANAGER") {
           return (

@@ -4,7 +4,7 @@ import { DivAllCustomer } from "./allCustomerStyles";
 
 export function AllCustomerPage() {
   return (
-    <div>
+    <div style={{ display: "flex", width: "100vw" }}>
       <MenuChoice />
       <DivAllCustomer>
         <TableCustomer />

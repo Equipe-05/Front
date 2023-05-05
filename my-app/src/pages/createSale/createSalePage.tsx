@@ -4,7 +4,7 @@ import { DivCreateSale } from "./createSaleStyles";
 
 export function CreateSalePage() {
   return (
-    <div>
+    <div style={{ display: "flex", width: "100vw" }}>
       <MenuChoice />
       <DivCreateSale>
         <CreateSaleForm />

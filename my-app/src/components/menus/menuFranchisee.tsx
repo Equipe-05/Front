@@ -30,7 +30,7 @@ export default function MenuFranchisee() {
 
   return (
     <>
-      <Drawer variant="permanent">
+      <Drawer variant="permanent" style={{width: "18vw" }}>
         {/* Box Principal do Menu */}
         <Box
           width={theme.spacing(28)}

@@ -4,7 +4,7 @@ import { DivCreateCustomer } from "./createCustomerStyles";
 
 export function CreateCustomerPage() {
   return (
-    <div>
+    <div style={{ display: "flex", width: "100vw" }}>
       <MenuChoice />
       <DivCreateCustomer>
         <CreateCustomerForm />

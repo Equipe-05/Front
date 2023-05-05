@@ -7,8 +7,6 @@ export const ContentDiv = styled.div`
   justify-content: center;
   width: 100%;
   max-width: 100%;
-  min-height: 100vh;
-  height: 100%;
   background-color: #062594;`
 
 export const TitleForm = styled.h2`
@@ -28,7 +26,6 @@ export const FormStyle = styled.form`
     align-items: center;
     justify-content: center;
     width: 450px;
-    min-height: 100%;
     font-size: 20px;
     background-color: #FFFFFF;
     gap: 20px;
