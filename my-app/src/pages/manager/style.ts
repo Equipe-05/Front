@@ -8,7 +8,8 @@ export const Manager = styled.div`
   align-items: center;
   justify-content: center;
   background-color: #000036;
-`
-export const ImgStart = styled.img `
-    max-height: 100vh;
-`
+`;
+
+export const ImgStart = styled.img`
+  max-height: 100vh;
+`;
