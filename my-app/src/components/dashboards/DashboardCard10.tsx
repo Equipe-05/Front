@@ -138,7 +138,7 @@ const Padding = styled.div`
 `;
 
 const TableContainer = styled.div`
-  overflow-x: auto;
+  overflow-x: hidden;
 `;
 
 const Table = styled.table`
