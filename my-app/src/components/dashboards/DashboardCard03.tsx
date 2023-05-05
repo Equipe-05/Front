@@ -1,5 +1,5 @@
-import LineChart from '../charts/LineChart01'
-import { hexToRGB } from '../../utils/Utils'
+import LineChart from "../charts/LineChart01";
+import { hexToRGB } from "../../utils/Utils";
 import {
   DashBoardCard,
   DashBoardCardHeader,
@@ -9,37 +9,37 @@ import {
   LineChartMoney,
   LineChartMoneyTag,
   ChartContainer,
-} from './styles'
+} from "./styles";
 
 function DashboardCard03() {
   const chartData = {
     labels: [
-      '12-01-2020',
-      '01-01-2021',
-      '02-01-2021',
-      '03-01-2021',
-      '04-01-2021',
-      '05-01-2021',
-      '06-01-2021',
-      '07-01-2021',
-      '08-01-2021',
-      '09-01-2021',
-      '10-01-2021',
-      '11-01-2021',
-      '12-01-2021',
-      '01-01-2022',
-      '02-01-2022',
-      '03-01-2022',
-      '04-01-2022',
-      '05-01-2022',
-      '06-01-2022',
-      '07-01-2022',
-      '08-01-2022',
-      '09-01-2022',
-      '10-01-2022',
-      '11-01-2022',
-      '12-01-2022',
-      '01-01-2023',
+      "12-01-2020",
+      "01-01-2021",
+      "02-01-2021",
+      "03-01-2021",
+      "04-01-2021",
+      "05-01-2021",
+      "06-01-2021",
+      "07-01-2021",
+      "08-01-2021",
+      "09-01-2021",
+      "10-01-2021",
+      "11-01-2021",
+      "12-01-2021",
+      "01-01-2022",
+      "02-01-2022",
+      "03-01-2022",
+      "04-01-2022",
+      "05-01-2022",
+      "06-01-2022",
+      "07-01-2022",
+      "08-01-2022",
+      "09-01-2022",
+      "10-01-2022",
+      "11-01-2022",
+      "12-01-2022",
+      "01-01-2023",
     ],
     datasets: [
       // Indigo line
@@ -49,13 +49,13 @@ function DashboardCard03() {
           289, 403, 554, 304, 289, 270, 134, 270, 829, 344, 388, 364,
         ],
         fill: true,
-        backgroundColor: `rgba(${hexToRGB('#3b82f6')}, 0.08)`,
-        borderColor: '#8b5cf6',
+        backgroundColor: `rgba(${hexToRGB("#3b82f6")}, 0.08)`,
+        borderColor: "#8b5cf6",
         borderWidth: 2,
         tension: 0,
         pointRadius: 0,
         pointHoverRadius: 3,
-        pointBackgroundColor: '#8b5cf6',
+        pointBackgroundColor: "#8b5cf6",
         clip: 20,
       },
       // Gray line
@@ -64,16 +64,23 @@ function DashboardCard03() {
           689, 562, 477, 477, 477, 477, 458, 314, 430, 378, 430, 498, 642, 350,
           145, 145, 354, 260, 188, 188, 300, 300, 282, 364, 660, 554,
         ],
-        borderColor: '#a5b4fc',
+        borderColor: "#a5b4fc",
         borderWidth: 2,
         tension: 0,
         pointRadius: 0,
         pointHoverRadius: 3,
-        pointBackgroundColor: '#a5b4fc',
+        pointBackgroundColor: "#a5b4fc",
         clip: 20,
       },
     ],
-  }
+  };
+
+  const randomTag: number =
+    5 +
+    Math.floor(Math.random() * 5 + 1) +
+    Math.floor(Math.random() * 5 + 1) +
+    Math.floor(Math.random() * 5 + 1) +
+    Math.floor(Math.random() * 5 + 1);
 
   return (
     <DashBoardCard>
@@ -83,7 +90,7 @@ function DashboardCard03() {
 
         <LineChartMoneyContainer>
           <LineChartMoney>R$9,962</LineChartMoney>
-          <LineChartMoneyTag>+49%</LineChartMoneyTag>
+          <LineChartMoneyTag>+{randomTag}%</LineChartMoneyTag>
         </LineChartMoneyContainer>
       </DashBoardCardHeader>
 
@@ -91,7 +98,7 @@ function DashboardCard03() {
         <LineChart data={chartData} width={389} height={128} />
       </ChartContainer>
     </DashBoardCard>
-  )
+  );
 }
 
-export default DashboardCard03
+export default DashboardCard03;
