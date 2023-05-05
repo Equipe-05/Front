@@ -47,16 +47,16 @@ function DashboardCard06() {
         label: "Vendas por Plano",
         data: [35, 30, 31, 21, 9, 41],
         backgroundColor: [
-          "#6366f1",
           "#3730a3",
+          "#6366f1",
           "#60a5fa",
           "#10b981",
           "#eab308",
           "#f43f5e",
         ],
         hoverBackgroundColor: [
-          "#4f46e5",
           "#312e81",
+          "#4f46e5",
           "#3b82f6",
           "#065f46",
           "#854d0e",

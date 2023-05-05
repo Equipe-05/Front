@@ -30,10 +30,10 @@ export default function MenuFranchisee() {
 
   return (
     <>
-      <Drawer variant="permanent" style={{width: "18vw" }}>
+      <Drawer variant="permanent" style={{ width: "18vw" }}>
         {/* Box Principal do Menu */}
         <Box
-          width={theme.spacing(28)}
+          width={theme.spacing(32)}
           height="100%"
           display="flex"
           flexDirection="column"

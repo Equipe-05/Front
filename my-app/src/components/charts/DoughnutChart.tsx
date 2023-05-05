@@ -61,12 +61,17 @@ function DoughnutChart({ data, width, height }: ChartProps) {
 
               const button = document.createElement("button");
               button.classList.add("btn-xs");
+              button.style.display = "flex";
+              button.style.alignItems = "center";
+              button.style.justifyContent = "center";
               button.style.backgroundColor = "ffffff";
               button.style.borderWidth = "1px";
               button.style.borderColor = "#e2e8f0";
+              button.style.borderRadius = "8px";
               button.style.color = "#64748b";
+              button.style.padding = "0 5px";
               button.style.boxShadow =
-                "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)";
+                "0 4px 6px -1px rgb(0 0 0 / 0.2), 0 2px 4px -2px rgb(0 0 0 / 0.2)";
               button.style.opacity = item.hidden ? ".3" : "";
               button.onclick = () => {
                 // @ts-ignore
@@ -88,6 +93,7 @@ function DoughnutChart({ data, width, height }: ChartProps) {
               label.className = "label";
               label.style.display = "flex";
               label.style.alignItems = "center";
+              label.style.fontSize = "0.9rem";
               const labelText = document.createTextNode(item.text);
               label.appendChild(labelText);
               li.appendChild(button);
@@ -110,7 +116,7 @@ function DoughnutChart({ data, width, height }: ChartProps) {
         <canvas ref={canvas} width={width} height={height}></canvas>
       </div>
       <ULContainer>
-        <ul ref={legend} className="flex flex-wrap justify-center -m-1"></ul>
+        <ul ref={legend}></ul>
       </ULContainer>
     </DoughnutChartContainer>
   );
@@ -126,15 +132,19 @@ const DoughnutChartContainer = styled.div`
 `;
 
 const ULContainer = styled.div`
+  display: flex;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
-  padding-bottom: 1rem;
+  padding-top: 0.4rem;
+  padding-bottom: 2rem;
+  align-items: center;
 
   ul {
     display: flex;
     margin: -0.25rem;
     flex-wrap: wrap;
     justify-content: center;
+    padding-left: 0;
 
     li {
       all: unset;
@@ -144,20 +154,6 @@ const ULContainer = styled.div`
         span {
           all: unset;
         }
-
-        /* span.box {
-          display: block;
-          width: 8px;
-          height: 8px;
-          border-radius: 2px;
-          margin-right: 4px;
-          pointer-events: none;
-        }
-
-        span.label {
-          display: flex;
-          align-items: center;
-        } */
       }
     }
   }
