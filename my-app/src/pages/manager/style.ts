@@ -21,7 +21,7 @@ export const DashboardContainer = styled.div`
   margin-top: 10px;
   align-items: center;
   width: 1240px;
-  height: 2200px;
+  height: 2130px;
 `;
 
 export const RowWrapper = styled.div`
@@ -49,12 +49,6 @@ export const TwoThirdsGraph = styled.div`
   margin: 0 10px;
 `;
 
-export const FullGraph = styled.div`
-  width: 100%;
-  margin: 0 10px;
-  height: 520px;
-`;
-
 export const OneThirdGraph = styled.div`
   width: 33%;
   height: 410px;
@@ -64,4 +58,10 @@ export const OneThirdGraph = styled.div`
 
 export const FormGraph = styled(LargeGraph)`
   height: 452px;
+`;
+
+export const FullGraph = styled.div`
+  width: 100%;
+  margin: 0 10px;
+  height: 470px;
 `;
