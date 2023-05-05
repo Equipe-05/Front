@@ -236,5 +236,6 @@ const TableTextMoney = styled.div`
 const TableTextCenter = styled.div`
   font-size: 0.875rem;
   line-height: 1.25rem;
-  /* text-align: center; */
+  text-align: center;
+  /* font-weight: 400; */
 `;
