@@ -17,7 +17,7 @@ import {
   PatchFranchiseByUserId,
 } from "../types/requests";
 
-axios.defaults.baseURL = "https://back-production-8e9e.up.railway.app";
+axios.defaults.baseURL = "https://hyperlocal-backend-production-64e4.up.railway.app/";
 axios.defaults.headers.post["Content-Type"] = "application/json";
 
 axios.interceptors.request.use(
